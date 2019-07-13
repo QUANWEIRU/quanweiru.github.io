@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Mathematics,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="儒此奇哉" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="排列组合是数学组合学中的基本概念，在高中数学中有详细的讲解，为了更好地理解和运用，这里我们再简单描述一下排列和组合的概念：简单来说排列就是指从给定m个数的元素中取出指定n个数的元素,进行排序。组合则是指从给定m个数的元素中仅仅取出指定n个数的元素，不考虑排序。  基本公式描述： 公式中A(n,m)为排列数公式，C(n,m)为组合数公式。排列与组合定义相近，它们的区别在于是否与顺序有关 排列组合是">
+<meta name="keywords" content="Mathematics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排列组合的思考方式">
+<meta property="og:url" content="https://quanweiru.github.io/2019/07/09/20190709-arrangement-combination/index.html">
+<meta property="og:site_name" content="儒此奇哉">
+<meta property="og:description" content="排列组合是数学组合学中的基本概念，在高中数学中有详细的讲解，为了更好地理解和运用，这里我们再简单描述一下排列和组合的概念：简单来说排列就是指从给定m个数的元素中取出指定n个数的元素,进行排序。组合则是指从给定m个数的元素中仅仅取出指定n个数的元素，不考虑排序。  基本公式描述： 公式中A(n,m)为排列数公式，C(n,m)为组合数公式。排列与组合定义相近，它们的区别在于是否与顺序有关 排列组合是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190709115434.png">
+<meta property="og:updated_time" content="2019-07-09T04:06:24.953Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="排列组合的思考方式">
+<meta name="twitter:description" content="排列组合是数学组合学中的基本概念，在高中数学中有详细的讲解，为了更好地理解和运用，这里我们再简单描述一下排列和组合的概念：简单来说排列就是指从给定m个数的元素中取出指定n个数的元素,进行排序。组合则是指从给定m个数的元素中仅仅取出指定n个数的元素，不考虑排序。  基本公式描述： 公式中A(n,m)为排列数公式，C(n,m)为组合数公式。排列与组合定义相近，它们的区别在于是否与顺序有关 排列组合是">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190709115434.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://quanweiru.github.io/2019/07/09/20190709-arrangement-combination/">
+
+
+
+
+
+  <title>排列组合的思考方式 | 儒此奇哉</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">儒此奇哉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/07/09/20190709-arrangement-combination/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="全威儒 / Weiru Quan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="儒此奇哉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">排列组合的思考方式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T11:36:15+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>排列组合是数学组合学中的基本概念，在高中数学中有详细的讲解，为了更好地理解和运用，这里我们再简单描述一下排列和组合的概念：<br>简单来说<br>排列就是指从给定m个数的元素中取出指定n个数的元素,进行排序。<br>组合则是指从给定m个数的元素中仅仅取出指定n个数的元素，不考虑排序。</p>
+</blockquote>
+<p>基本公式描述：<br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190709115434.png" alt></p>
+<p>公式中A(n,m)为排列数公式，C(n,m)为组合数公式。<br>排列与组合定义相近，它们的区别在于是否与顺序有关</p>
+<h2 id="排列组合是解决问题的一种思考工具"><a href="#排列组合是解决问题的一种思考工具" class="headerlink" title="排列组合是解决问题的一种思考工具"></a>排列组合是解决问题的一种思考工具</h2><p>核心问题是 <strong>研究给定要求的排列和组合可能出现的情况总数。</strong></p>
+<p>处理排列、组合综合问题，一般思想是先选元素 <strong>（组合），后排列，</strong> 按元素的性质进行“分类”和按事件的过程“分步”，始终是处理排列、组合问题的基本原理和方法，通过解题训练要注意积累和掌握分类和分步的基本技能，保证每步独立，达到分类标准明确，分步层次清楚，不重不漏。</p>
+<p>排列组合思维带来的启示：</p>
+<h3 id="1-创新是多种资源的重新排列组合"><a href="#1-创新是多种资源的重新排列组合" class="headerlink" title="1. 创新是多种资源的重新排列组合"></a>1. 创新是多种资源的重新排列组合</h3><p>通过将不同种类的内容组合到一起，进而可以使之变成不可分割的整体一种思考方式，<strong>有很多创新其实就是通过组合思维来得到的，</strong> 如电视+电话组合出来了新的产品可视电话、自行车+移动支付组合出来了共享单车、汽车+电池组合出来电动汽车等等。在工作生活中可以利用联想将各种可能的物品、思想组合到一起从而变成新的思想，甚至是解决当前无法解决的问题。</p>
+<h3 id="2-排列组合之分解，整合思维"><a href="#2-排列组合之分解，整合思维" class="headerlink" title="2. 排列组合之分解，整合思维"></a>2. 排列组合之分解，整合思维</h3><p>万事万物都是由其构成的元数排列组合成的;思维是知识的运动，运动的知识，是知识的排列组合、取舍；前所未有的知识排列组合就是思维创新，合乎客观的有价值的思维创新的外化、物化就是理论创新、创造发明。</p>
+<p>科学研究，无非是分解、聚合事物，考察其变化形式、内容、规律、过程、结果、利害。因此，“排列组合研究法”才是对研究对象的全面分解、还原；录像、扫描、透视；点、线、面、立体、空间的考究，是最完善的宏观战略、微观战术研究方法的总成。是科学的周全的世界观、认知及研究方法。万法归一，所有其它研究方法都可谓它的子法。</p>
+<p>解决排列组合问题的基本规律，即：分类相加，分步相乘，排组分清，加乘明确；有序排列，无序组合；正难则反，间接排除等。</p>
+<h2 id="常用的方法技巧"><a href="#常用的方法技巧" class="headerlink" title="常用的方法技巧"></a>常用的方法技巧</h2><p><strong>一．特殊元素（位置）的“优先安排法”：</strong> 对于特殊元素（位置）的排列组合问题，一般先考虑特殊，再考虑其他。</p>
+<p>例1、 用0，2，3，4，5，五个数字，组成没有重复数字的三位数，其中偶数共有个数？</p>
+<p>[分析]由于该三位数为偶数，故末尾数字必为偶数，又因为0不能排首位，故0就是其中的“特殊”元素，应该优先安排，按0排在末尾和0不排在末尾分两类：1）0排末尾时，有A42个，2）0不排在末尾时，则有C21 A31A31个，由分数计数原理，共有偶数A42 + C21 A31A31=30个。</p>
+<p><strong>二．总体淘汰法：</strong> 对于含否定的问题，还可以从总体中把不合要求的除去。如例1中，也可用此法解答:五个数字组成三位数的全排列有A53个，排好后发现0不能排首位，而且数字3，5也不能排末位，这两种排法要排除，故有A53–3A42+ C21A31=30个偶数。</p>
+<p><strong>三．合理分类与准确分步</strong> 含有约束条件的排列组合问题，按元素的性质进行分类，按事情发生的连续过程分步，做到分类标准明确，分步层次清楚，不重不漏。</p>
+<p><strong>四．相邻问题用捆绑法：</strong> 在解决对于某几个元素要求相邻的问题时，先整体考虑，将相邻的元素“捆绑”起来，看作一“大”元素与其余元素排列，然后再考虑大元素内部各元素间顺序的解题策略就是捆绑法．</p>
+<p>例2、有8本不同的书；其中数学书3本，外语书2本，其它学科书3本．若将这些书排成一列放在书架上，让数学书排在一起，外语书也恰好排在一起的排法共有多少种？</p>
+<p>解：把3本数学书“捆绑”在一起看成一本大书，2本外语书也“捆绑”在一起看成一本大书，与其它3本书一起看作5个元素，共有A55种排法；又3本数学书有A33种排法，2本外语书有A22种排法；根据分步计数原理共有排法A55 A33 A22=1440(种).</p>
+<p><strong>五．不相邻问题用“插空法”：</strong> 不相邻问题是指要求某些元素不能相邻，由其它元素将它们隔开．解决此类问题可以先将其它元素排好，再将所指定的不相邻的元素插入到它们的间隙及两端位置，故称插空法．</p>
+<p>例3、用1、2、3、4、5、6、7、8组成没有重复数字的八位数，要求1与2相邻，2与4相邻，5与6相邻，而7与8不相邻。这样的八位数共有多少个？</p>
+<p>解：由于要求1与2相邻，2与4相邻，可将1、2、4这三个数字捆绑在一起形成一个大元素，这个大元素的内部中间只能排2，两边排1和4，因此大元素内部共有A22种排法，再把5与6也捆绑成一个大元素，其内部也有A22种排法，与数字3共计三个元素，先将这三个元素排好，共有A33种排法，再从前面排好的三个元素形成的间隙及两端共四个位置中任选两个，把要求不相邻的数字7和8插入即可，共有A42种插法，所以符合条件的八位数共有A22 A22 A33 A42＝288(种)．</p>
+<p><strong>六．顺序固定用“除法”：</strong> 对于某几个元素按一定的顺序排列问题，可先把这几个元素与其他元素一同进行全排列，然后用总的排列数除于这几个元素的全排列数。</p>
+<p>例4、6个人排队，甲、乙、丙三人按“甲—乙—丙”顺序排的排队方法有多少种？</p>
+<p>分析：不考虑附加条件，排队方法有A66种，而其中甲、乙、丙的A33种排法中只有一种符合条件。故符合条件的排法有A66 ÷A33 =120种。(或A63种)</p>
+<p><strong>七．分排问题用“直排法”：</strong> 把几个元素排成若干排的问题，可采用统一排成一排的排法来处理。</p>
+<p>例6、7个人坐两排座位，第一排3个人，第二排坐4个人，则不同的坐法有多少种？</p>
+<p>分析：7个人可以在前两排随意就坐，再无其它条件,故两排可看作一排来处理，不同的坐法共有A77种。</p>
+<p><strong>八．逐个试验法：</strong> 题中附加条件增多，直接解决困难时，用试验逐步寻找规律。</p>
+<p><strong>九、构造模型“隔板法”：</strong> 对于较复杂的排列问题，可通过设计另一情景，构造一个隔板模型来解决问题。</p>
+<p>例8、方程a+b+c+d=12有多少组正整数解？</p>
+<p>分析：建立隔板模型：将12个完全相同的球排成一列，在它们之间形成的11个间隙中任意插入3块隔板，把球分成4堆，每一种分法所得4堆球的各堆球的数目，对应为a、b、c、d的一组正整解，故原方程的正整数解的组数共有C113 .</p>
+<p><strong>十.排除法：</strong> 对于含“至多”或“至少”的排列组合问题，若直接解答多需进行复杂讨论，可以考虑“总体去杂”，即将总体中不符合条件的排列或组合删除掉，从而计算出符合条件的排列组合数的方法．</p>
+<p>例9、从4台甲型和5台乙型电视机中任意取出3台，其中至少要甲型与乙型电视机各一台，则不同的取法共有多少种？</p>
+<p>解：在被取出的3台中，不含甲型或不合乙型的抽取方法均不合题意，因此符合题意的抽取方法有C93-C43-C53=70(种)，故选C．</p>
+<p>注：这种方法适用于反面的情况明确且易于计算的习题．</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mathematics/" rel="tag"># Mathematics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/28/20190628-generate-multiple-awr-reports/" rel="next" title="Generate Multiple AWR Reports">
+                <i class="fa fa-chevron-left"></i> Generate Multiple AWR Reports
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="全威儒 / Weiru Quan">
+            
+              <p class="site-author-name" itemprop="name">全威儒 / Weiru Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QUANWEIRU" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:quanweiru@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3009164983" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="tencent://message/?uin=609990936&Site=&Menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排列组合是解决问题的一种思考工具"><span class="nav-number">1.</span> <span class="nav-text">排列组合是解决问题的一种思考工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创新是多种资源的重新排列组合"><span class="nav-number">1.1.</span> <span class="nav-text">1. 创新是多种资源的重新排列组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-排列组合之分解，整合思维"><span class="nav-number">1.2.</span> <span class="nav-text">2. 排列组合之分解，整合思维</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的方法技巧"><span class="nav-number">2.</span> <span class="nav-text">常用的方法技巧</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">全威儒 / Weiru Quan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

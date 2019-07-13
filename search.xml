@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[排列组合的思考方式]]></title>
+    <url>%2F2019%2F07%2F09%2F20190709-arrangement-combination%2F</url>
+    <content type="text"><![CDATA[排列组合是数学组合学中的基本概念，在高中数学中有详细的讲解，为了更好地理解和运用，这里我们再简单描述一下排列和组合的概念：简单来说排列就是指从给定m个数的元素中取出指定n个数的元素,进行排序。组合则是指从给定m个数的元素中仅仅取出指定n个数的元素，不考虑排序。 基本公式描述： 公式中A(n,m)为排列数公式，C(n,m)为组合数公式。排列与组合定义相近，它们的区别在于是否与顺序有关 排列组合是解决问题的一种思考工具核心问题是 研究给定要求的排列和组合可能出现的情况总数。 处理排列、组合综合问题，一般思想是先选元素 （组合），后排列， 按元素的性质进行“分类”和按事件的过程“分步”，始终是处理排列、组合问题的基本原理和方法，通过解题训练要注意积累和掌握分类和分步的基本技能，保证每步独立，达到分类标准明确，分步层次清楚，不重不漏。 排列组合思维带来的启示： 1. 创新是多种资源的重新排列组合通过将不同种类的内容组合到一起，进而可以使之变成不可分割的整体一种思考方式，有很多创新其实就是通过组合思维来得到的， 如电视+电话组合出来了新的产品可视电话、自行车+移动支付组合出来了共享单车、汽车+电池组合出来电动汽车等等。在工作生活中可以利用联想将各种可能的物品、思想组合到一起从而变成新的思想，甚至是解决当前无法解决的问题。 2. 排列组合之分解，整合思维万事万物都是由其构成的元数排列组合成的;思维是知识的运动，运动的知识，是知识的排列组合、取舍；前所未有的知识排列组合就是思维创新，合乎客观的有价值的思维创新的外化、物化就是理论创新、创造发明。 科学研究，无非是分解、聚合事物，考察其变化形式、内容、规律、过程、结果、利害。因此，“排列组合研究法”才是对研究对象的全面分解、还原；录像、扫描、透视；点、线、面、立体、空间的考究，是最完善的宏观战略、微观战术研究方法的总成。是科学的周全的世界观、认知及研究方法。万法归一，所有其它研究方法都可谓它的子法。 解决排列组合问题的基本规律，即：分类相加，分步相乘，排组分清，加乘明确；有序排列，无序组合；正难则反，间接排除等。 常用的方法技巧一．特殊元素（位置）的“优先安排法”： 对于特殊元素（位置）的排列组合问题，一般先考虑特殊，再考虑其他。 例1、 用0，2，3，4，5，五个数字，组成没有重复数字的三位数，其中偶数共有个数？ [分析]由于该三位数为偶数，故末尾数字必为偶数，又因为0不能排首位，故0就是其中的“特殊”元素，应该优先安排，按0排在末尾和0不排在末尾分两类：1）0排末尾时，有A42个，2）0不排在末尾时，则有C21 A31A31个，由分数计数原理，共有偶数A42 + C21 A31A31=30个。 二．总体淘汰法： 对于含否定的问题，还可以从总体中把不合要求的除去。如例1中，也可用此法解答:五个数字组成三位数的全排列有A53个，排好后发现0不能排首位，而且数字3，5也不能排末位，这两种排法要排除，故有A53–3A42+ C21A31=30个偶数。 三．合理分类与准确分步 含有约束条件的排列组合问题，按元素的性质进行分类，按事情发生的连续过程分步，做到分类标准明确，分步层次清楚，不重不漏。 四．相邻问题用捆绑法： 在解决对于某几个元素要求相邻的问题时，先整体考虑，将相邻的元素“捆绑”起来，看作一“大”元素与其余元素排列，然后再考虑大元素内部各元素间顺序的解题策略就是捆绑法． 例2、有8本不同的书；其中数学书3本，外语书2本，其它学科书3本．若将这些书排成一列放在书架上，让数学书排在一起，外语书也恰好排在一起的排法共有多少种？ 解：把3本数学书“捆绑”在一起看成一本大书，2本外语书也“捆绑”在一起看成一本大书，与其它3本书一起看作5个元素，共有A55种排法；又3本数学书有A33种排法，2本外语书有A22种排法；根据分步计数原理共有排法A55 A33 A22=1440(种). 五．不相邻问题用“插空法”： 不相邻问题是指要求某些元素不能相邻，由其它元素将它们隔开．解决此类问题可以先将其它元素排好，再将所指定的不相邻的元素插入到它们的间隙及两端位置，故称插空法． 例3、用1、2、3、4、5、6、7、8组成没有重复数字的八位数，要求1与2相邻，2与4相邻，5与6相邻，而7与8不相邻。这样的八位数共有多少个？ 解：由于要求1与2相邻，2与4相邻，可将1、2、4这三个数字捆绑在一起形成一个大元素，这个大元素的内部中间只能排2，两边排1和4，因此大元素内部共有A22种排法，再把5与6也捆绑成一个大元素，其内部也有A22种排法，与数字3共计三个元素，先将这三个元素排好，共有A33种排法，再从前面排好的三个元素形成的间隙及两端共四个位置中任选两个，把要求不相邻的数字7和8插入即可，共有A42种插法，所以符合条件的八位数共有A22 A22 A33 A42＝288(种)． 六．顺序固定用“除法”： 对于某几个元素按一定的顺序排列问题，可先把这几个元素与其他元素一同进行全排列，然后用总的排列数除于这几个元素的全排列数。 例4、6个人排队，甲、乙、丙三人按“甲—乙—丙”顺序排的排队方法有多少种？ 分析：不考虑附加条件，排队方法有A66种，而其中甲、乙、丙的A33种排法中只有一种符合条件。故符合条件的排法有A66 ÷A33 =120种。(或A63种) 七．分排问题用“直排法”： 把几个元素排成若干排的问题，可采用统一排成一排的排法来处理。 例6、7个人坐两排座位，第一排3个人，第二排坐4个人，则不同的坐法有多少种？ 分析：7个人可以在前两排随意就坐，再无其它条件,故两排可看作一排来处理，不同的坐法共有A77种。 八．逐个试验法： 题中附加条件增多，直接解决困难时，用试验逐步寻找规律。 九、构造模型“隔板法”： 对于较复杂的排列问题，可通过设计另一情景，构造一个隔板模型来解决问题。 例8、方程a+b+c+d=12有多少组正整数解？ 分析：建立隔板模型：将12个完全相同的球排成一列，在它们之间形成的11个间隙中任意插入3块隔板，把球分成4堆，每一种分法所得4堆球的各堆球的数目，对应为a、b、c、d的一组正整解，故原方程的正整数解的组数共有C113 . 十.排除法： 对于含“至多”或“至少”的排列组合问题，若直接解答多需进行复杂讨论，可以考虑“总体去杂”，即将总体中不符合条件的排列或组合删除掉，从而计算出符合条件的排列组合数的方法． 例9、从4台甲型和5台乙型电视机中任意取出3台，其中至少要甲型与乙型电视机各一台，则不同的取法共有多少种？ 解：在被取出的3台中，不含甲型或不合乙型的抽取方法均不合题意，因此符合题意的抽取方法有C93-C43-C53=70(种)，故选C． 注：这种方法适用于反面的情况明确且易于计算的习题．]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Generate Multiple AWR Reports]]></title>
+    <url>%2F2019%2F06%2F28%2F20190628-generate-multiple-awr-reports%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960-- ------------------------------------------------------------------------------------- File Name : http://www.oracle-base.com/dba/10g/generate_multiple_awr_reports.sql-- Author : DR Timothy S Hall-- Description : Generates AWR reports for all snapsots between the specified start and end point.-- Requirements : Access to the v$ views, UTL_FILE and DBMS_WORKLOAD_REPOSITORY packages.-- Call Syntax : Create the directory with the appropriate path.-- Adjust the start and end snapshots as required.-- @generate_multiple_awr_reports.sql-- Last Modified: 02/08/2007-- -----------------------------------------------------------------------------------CREATE OR REPLACE DIRECTORY awr_reports_dir AS '/tmp/';DECLARE -- Adjust before use. l_snap_start NUMBER := 1; l_snap_end NUMBER := 10; l_dir VARCHAR2(50) := 'AWR_REPORTS_DIR'; l_last_snap NUMBER := NULL; l_dbid v$database.dbid%TYPE; l_instance_number v$instance.instance_number%TYPE; l_file UTL_FILE.file_type; l_file_name VARCHAR(50);BEGIN SELECT dbid INTO l_dbid FROM v$database; SELECT instance_number INTO l_instance_number FROM v$instance; FOR cur_snap IN (SELECT snap_id FROM dba_hist_snapshot WHERE instance_number = l_instance_number AND snap_id BETWEEN l_snap_start AND l_snap_end ORDER BY snap_id) LOOP IF l_last_snap IS NOT NULL THEN l_file := UTL_FILE.fopen(l_dir, 'awr_' || l_last_snap || '_' || cur_snap.snap_id || '.htm', 'w', 32767); FOR cur_rep IN (SELECT output FROM TABLE(DBMS_WORKLOAD_REPOSITORY.awr_report_html(l_dbid, l_instance_number, l_last_snap, cur_snap.snap_id))) LOOP UTL_FILE.put_line(l_file, cur_rep.output); END LOOP; UTL_FILE.fclose(l_file); END IF; l_last_snap := cur_snap.snap_id; END LOOP; EXCEPTION WHEN OTHERS THEN IF UTL_FILE.is_open(l_file) THEN UTL_FILE.fclose(l_file); END IF; RAISE; END;/]]></content>
+      <categories>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>PL/SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[How to Achieve R12 Multi Org for Custom Table]]></title>
+    <url>%2F2019%2F06%2F28%2F20190628-achieve-r12-moac-custom-table%2F</url>
+    <content type="text"><![CDATA[We can achieve the Multi Org functionality for custom table with follow the below steps: Create a custom table in custom schema, grant to user APPS, create synonyms for this table and insert some data. 12345678CREATE TABLE cux.cux_inv_all ( inv_num VARCHAR2(30), inv_date DATE, org_id NUMBER);GRANT ALL ON cux.cux_inv_all TO apps;CREATE OR REPLACE SYNONYM apps.cux_inv_all FOR cux.cux_inv_all;CREATE OR REPLACE SYNONYM apps.cux_inv FOR cux.cux_inv_all; Apply RLS (Row Level Security) to CUX_INV synonym using standard Virtual Private Database (VPD) policy function MO_GLOBAL.ORG_SECURITY and DBMS_RLS.ADD_POLICY API. 1234567891011BEGINdbms_rls.add_policy( object_schema =&gt; 'APPS' , object_name =&gt; 'CUX_INV' , policy_name =&gt; 'ORG_SEG' , function_schema =&gt; 'APPS' , policy_function =&gt; 'MO_GLOBAL.ORG_SECURITY' , statement_types =&gt; 'SELECT, INSERT, UPDATE, DELETE' , update_check =&gt; true , enable =&gt; true);END; Check the policy already added or not in ALL_POLICIES view. If added, it will return the data. 123SELECT *FROM all_policiesWHERE object_name='CUX_INV'; Get the data for which org_id initialized by using MO_GLOBAL.SET_POLICY_CONTEXT procedure. Without initialize the org_id 1select * from cux_inv; Initialize org_id 204 123exec mo_global.set_policy_context('S', 204);select * from cux_inv; Revoke the policy using DBMS_RLS.DROP_POLICY API. When you query to ALL_POLICIES view will get the result no row returned.1EXEC DBMS_RLS.DROP_POLICY('APPS','CUX_INV','ORG_SEC');]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>PL/SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通过后台取得前端登录URL]]></title>
+    <url>%2F2019%2F06%2F28%2F20190628-ebs-url%2F</url>
+    <content type="text"><![CDATA[1234567891011SELECT home_url FROM icx_parameters; SELECT pov.profile_option_valueFROM fnd_profile_option_values povWHERE 1 = 1 AND EXISTS (SELECT 1 FROM fnd_profile_options po WHERE 1 = 1 AND po.profile_option_id = pov.profile_option_id AND po.profile_option_name = 'APPS_FRAMEWORK_AGENT') AND pov.level_value = 0;]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通过会话SID取得LOV查询脚本]]></title>
+    <url>%2F2019%2F06%2F27%2F20190627-lov-query-sql%2F</url>
+    <content type="text"><![CDATA[注意 （如果是多节点服务器，请确认前端与后台的匹对关系） 输入取得的会话SID 12345 SELECT T.SQL_TEXT FROM V$SQLTEXT_WITH_NEWLINES T, V$SESSION S WHERE 1 = 1 AND S.PREV_SQL_ADDR = T.ADDRESS AND S.SID = &amp;P_SID --369ORDER BY T.PIECE;]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Oracle PL/SQL Utility Library]]></title>
+    <url>%2F2019%2F06%2F27%2F20190627-PL-SQL-Utility-Library%2F</url>
+    <content type="text"><![CDATA[alexandria-plsql-utils Oracle PL/SQL Utility Library This library is a collection of various utility packages for PL/SQL, as well as links to useful libraries hosted and maintained elsewhere. Generate PDF files using PL/SQL https://technology.amis.nl/2012/04/11/generating-a-pdf-document-with-some-plsql-as_pdf_mini-as_pdf3/ https://technology.amis.nl/2010/10/20/as_pdf-generating-a-pdf-document-with-some-plsql/ http://www.erasme.org/PL-FPDF,1337?lang=en http://ora-00001.blogspot.com/2009/10/free-pdf-package-for-plsql.html http://sourceforge.net/projects/pljrxml2pdf/ http://www.plpdf.com/ PDF_BUILDER_PKG PDFGEN_PKG Generate Excel files using PL/SQL https://technology.amis.nl/2011/02/19/create-an-excel-file-with-plsql/ http://www.jasonsdevelopercorner.com/?page_id=8 https://xml-spreadsheet.samplecode.oracle.com/ http://sanjeev-oracle-world.blogspot.com/2007/06/create-excel-workbook-by-plsql-code.html http://matzberger.de/oracle/spreadsheet-en.html http://www.protalk.in/oracle/plsql-tips-package-for-exporting-data-to-excel/ XLSX_BUILDER_PKG SYLK_UTIL_PKG Generate RTF files using PL/SQL http://monkeyonoracle.blogspot.com/2009/07/dynamic-rtf-documents-revisited.html Working with Office 2007 (OOXML) files using PL/SQL http://ora-00001.blogspot.com/2011/02/working-with-office-2007-ooxml-files.html https://technology.amis.nl/2010/06/09/parsing-a-microsoft-word-docx-and-unzip-zipfiles-with-plsql/ http://www.docufy.be/ OOXML_UTIL_PKG Zip and unzip files using PL/SQL https://technology.amis.nl/2010/03/13/utl_compress-gzip-and-zlib/ ZIP_UTIL_PKG Generate and parse CSV files using PL/SQL http://ora-00001.blogspot.com/2010/04/select-from-spreadsheet-or-how-to-parse.html CSV_UTIL_PKG Generate and parse RSS feeds using PL/SQL http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-one.html http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-two.html RSS_UTIL_PKG Generate JSON using PL/SQL http://ora-00001.blogspot.com/2010/02/ref-cursor-to-json.html JSON_UTIL_PKG Parse JSON using PL/SQL https://github.com/pljson/pljson http://reseau.erasme.org/pl-sql-library-for-JSON?lang=en Transfer files (FTP) using PL/SQL http://www.oracle-base.com/articles/misc/FTPFromPLSQL.php FTP_UTIL_PKG Send email (SMTP) using PL/SQL http://www.oracle.com/technology/sample_code/tech/pl_sql/htdocs/Utl_Smtp_Sample.html http://download.oracle.com/docs/cd/E10513_01/doc/apirefs.310/e12855/apex_mail.htm MAIL_UTIL_PKG Receive email (POP3) using PL/SQL POP3_UTIL_PKG Receive email (POP3 and IMAP) using PL/SQL (and Java) http://plsqlmailclient.sourceforge.net/ Work with MS Exchange using PL/SQL http://ora-00001.blogspot.com/2012/05/ms-exchange-api-for-plsql.html MS_EWS_UTIL_PKG Integrate with Google services (Google Maps, Google Calendar, Google Translate) using PL/SQL http://ora-00001.blogspot.com/2009/12/using-google-translate-from-plsql.html GOOGLE_AUTH_PKG GOOGLE_CALENDAR_PKG GOOGLE_MAPS_PKG GOOGLE_TRANSLATE_PKG Integrate with Amazon web services (Simple Storage Service S3) using PL/SQL http://ora-00001.blogspot.com/2011/03/amazon-s3-api-for-plsql.html http://jastraub.blogspot.com/2011/01/building-amazon-s3-client-with.html AMAZON_AWS_AUTH_PKG AMAZON_AWS_S3_PKG Integrate with PayPal web services PAYPAL_UTIL_PKG Integrate with Twitter using PL/SQL http://oratweet.com/ Call SOAP and REST web services using PL/SQL http://jastraub.blogspot.com/2008/06/flexible-web-service-api.html https://flex-ws-api.samplecode.oracle.com/ http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/apex_web_service.htm#BABFFDEH http://ora-00001.blogspot.com/2009/07/calling-soap-web-service-from-plsql-by.html FLEX_WS_API SOAP_CLIENT_UTIL_PKG T_SOAP_ENVELOPE Publish SOAP web service using PL/SQL http://ora-00001.blogspot.com/2011/01/soap-server-in-plsql.html SOAP_SERVER_PKG Publish REST web services using PL/SQL http://ora-00001.blogspot.com/2009/07/creating-rest-web-service-with-plsql.html http://www.oracle-base.com/articles/misc/XMLOverHTTP.php Regular expressions using PL/SQL REGEXP_UTIL_PKG String, date and math utilities DATE_UTIL_PKG MATH_UTIL_PKG STRING_UTIL_PKG Encoding and data type utilities ENCODE_UTIL_PKG RAW_UTIL_PKG SQL utilities SQL_BUILDER_PKG SQL_UTIL_PKG XML utilities http://ora-00001.blogspot.com/2011/02/display-any-xml-as-clickable-tree-using.html XML_BUILDER_PKG XML_DATASET_PKG XML_STYLESHEET_PKG XML_UTIL_PKG File utilities FILE_UTIL_PKG HTTP utilities HTTP_UTIL_PKG Encryption and security utilities and protocols http://ora-00001.blogspot.com/2011/08/ntlm-for-plsql.html CRYPTO_UTIL_PKG NTLM_UTIL_PKG NTLM_HTTP_PKG Logging and debugging utilities https://github.com/tmuth/Logger---A-PL-SQL-Logging-Utility http://sourceforge.net/projects/log4plsql/ http://sourceforge.net/projects/ilo/ DEBUG_PKG Generating test data and random bits using PL/SQL http://ora-00001.blogspot.com/2011/02/generating-test-data-using-plsql.html RANDOM_UTIL_PKG PL/SQL Web Toolkit (OWA) utilities OWA_UTIL_PKG Web Gateways for PL/SQL http://download.oracle.com/docs/cd/B19306_01/appdev.102/b14258/d_epg.htm http://download.oracle.com/docs/cd/B14099_19/web.1012/b14010/toc.htm http://www.oracle.com/technetwork/developer-tools/apex-listener/overview/index.html http://code.google.com/p/thoth-gateway/ http://sourceforge.net/projects/dbprism/ http://oss.oracle.com/projects/mod_owa/dist/documentation/modowa.htm jQGrid Integration Kit for PL/SQL and Apex http://ora-00001.blogspot.com/2010/03/jqgrid-integration-kit-for-plsql-and.html http://code.google.com/p/jqgrid-for-plsql/ Application Express APIs http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/toc.htm APEX_UTIL_PKG Miscellaneous utilities and demos http://www.oracle.com/webfolder/technetwork/tutorials/plsql/sfdemo.zip http://www.toadworld.com/platforms/oracle/w/wiki/8243.plsql-obsession PL/SQL Frameworks http://sourceforge.net/projects/plsqlframestart/ http://www.toadworld.com/Freeware/PLVisionFreeware/tabid/687/Default.aspx PL/SQL Wrappers for Java http://sourceforge.net/projects/oracle-jutils/ Unit Testing Frameworks for PL/SQL https://utplsql.github.io/ http://code.google.com/p/pluto-test-framework/ Documentation Generators (JavaDoc-style) http://sourceforge.net/projects/plsqlutils/ http://www.thatjeffsmith.com/archive/2012/03/javadoc-for-the-database-a-la-dbdoc-via-sql-developer/ Scripting, deployment and installation utilities http://code.google.com/p/oracle-ddl2svn/]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>PL/SQL</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>PL/SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PL/SQL统计运行的时间器]]></title>
+    <url>%2F2019%2F06%2F27%2F20190627-PLSQL-timer%2F</url>
+    <content type="text"><![CDATA[在遇到一些较为复杂的项目时，需要做技术设计，功能函数封装等，随之而来模块出现性能问题，故在编写PL/SQL程式时，尽量加上统计运行的时间器，方便性能分析提供依据。 12345678910111213141516171819202122232425262728293031CREATE OR REPLACE PACKAGE timer AUTHID current_user IS PROCEDURE start_timer; PROCEDURE show_elapsed ( program_name IN VARCHAR2 );END;/CREATE OR REPLACE PACKAGE BODY timer IS c_time_gap NUMBER : = power(2, 32); l_start_time PLS_INTEGER; PROCEDURE start_timer IS BEGIN l_start_time : = dbms_utility.get_time(); END; PROCEDURE show_elapsed ( program_name IN VARCHAR2 ) AS l_end_time VARCHAR2(100); BEGIN l_end_time : = MOD(dbms_utility.get_time - l_start_time + c_time_gap, c_time_gap) / 100; dbms_output.put_line(program_name || ' has elapsed time '|| l_end_time|| ' s.'); END;END;/ 1234567891011--example:beginpro_timing.start_timer;dbms_output.put_line('this is a test');dbms_lock.sleep(2);pro_timing.show_elapsed('test program');end;--Result:--this is a test--test program has elapsed time 2 s.]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>PL/SQL</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>PL/SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[开发FORM程序异常提示窗口]]></title>
+    <url>%2F2019%2F06%2F27%2F20190627-raise-exception-tips%2F</url>
+    <content type="text"><![CDATA[编写FORM程序的PL/SQL程序包产出异常情况时，弹出一个异常提示窗口。 1234567DECLAREBEGINapp_exception.raise_exception ( exception_type =&gt; 'APP', exception_code =&gt; -20001, exception_text =&gt; 'OTHERS EXCETPITON ' || CHR (13) || TO_CHAR (DBMS_UTILITY.format_error_backtrace));END;]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+        <category>Form</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>Form</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[登录OAF页面和FORM的职责不对称]]></title>
+    <url>%2F2019%2F06%2F27%2F20190627-OAF-and-FORM-unequal-responsibilities%2F</url>
+    <content type="text"><![CDATA[问题：登录OAF页面和FORM的职责不对称，即OAF登录页看见的职责条目不等于登录FORM后的职责条目。 方法：打开系统管理员职责，刷新工作流程请求 工作流职责层次结构传递。]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>R12.x</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[R12.x Accounting Calendar template]]></title>
+    <url>%2F2019%2F06%2F26%2F20190626-Accounting-Calendar-template%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728--parameters:--year : start year--month: generate monthsselect --(case when mod(LEVEL,12) &lt;&gt;0 then mod(LEVEL,12) else 12 end)--, (case when mod(LEVEL,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end) initcap (to_char (to_date (lpad ((case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end), 2, '0'), 'mm'), 'MON', 'NLS_DATE_LANGUAGE=AMERICAN')) prefix, 'Month' type, to_char(to_number(:year) + (case when mod(level,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end)) year, to_char (to_date (lpad (to_char(case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end), 2, '0'), 'mm'), 'q') quarter, (case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end) num, upper (to_char (to_date (to_char(to_number(:year) + (case when mod(level,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end)) || '-' || lpad ((case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end), 2, '0'), 'yyyy-mm'), 'dd-mon-yyyy')) date_from, upper (to_char (last_day (to_date (to_char(to_number(:year) + (case when mod(level,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end)) || '-' || lpad ((case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end), 2, '0'), 'yyyy-mm')), 'dd-mon-yyyy')) date_to, initcap (to_char (to_date (to_char(to_number(:year) + (case when mod(level,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end)) || '-' || lpad ((case when mod(level,12) &lt;&gt;0 then mod(level,12) else 12 end), 2, '0'), 'yyyy-mm'), 'mon-yy')) namefrom dualconnect by level &lt;= :monthunion allselect 'Adj' prefix, 'Month' type, to_char (to_number(:year) + level - 1) year, '4' quarter, 13 num, upper (to_char (last_day (to_date (to_char (to_number(:year) + level - 1) || '-12', 'yyyy-mm')), 'dd-mon-yyyy')) date_from, upper (to_char (last_day (to_date (to_char (to_number(:year) + level - 1) || '-12', 'yyyy-mm')), 'dd-mon-yyyy')) date_to, 'Adj-' || to_char (to_date (to_char (to_number(:year) + level - 1) , 'yyyy'), 'yy') namefrom dualconnect by level &lt;= floor(:month/12)order by year, num asc;]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>R12.x</tag>
+        <tag>SQL</tag>
+        <tag>Dataload</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IE(8,9,11)登录FORM提示FRM-92050]]></title>
+    <url>%2F2019%2F06%2F26%2F20190626-ebs-FRM-92050%2F</url>
+    <content type="text"><![CDATA[问题：IE(8，9，11) 打开form窗口时报错误信息：FRM-92050：连接服务器失败： /forms/lservlet/debug:-1 方法：EBS站点加到信任站点中，并修改信任站点的“自定义级别”，在“安全设置”对话框中找到“启用 XSS 筛选器”，改为“禁用”即可。]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[E-Business Suite R12.2 常用手册]]></title>
+    <url>%2F2019%2F06%2F26%2F20190626-ebs-R122-common-book%2F</url>
+    <content type="text"><![CDATA[Related Information Sources这本书包含在Oracle电子商务套件文档库中。如果该指南将您引用到其他Oracle电子商务套件文档中，只使用这些指南的最新版本12.2版本。 Oracle Alert User’s Guide Oracle alert 用户指南本指南说明如何定义周期和事件警报，以监视Oracle电子商务套件数据的状态。 Oracle Application Framework Developer’s Guide Oracle应用程序框架开发者指南本指南包含了Oracle电子商务套件开发人员编写的应用Oracle应用程序框架构建的应用程序的编码标准。本指南以PDF格式在My Oracle Support和与Oracle应用推广在JDeveloper 10G 在线文档是可用的。 Oracle Application Framework Personalization Guide Oracle应用程序框架个性化指南本指南涵盖了设计时和运行时的个性化与Oracle应用框架构建的应用程序方面 Oracle Fusion Middleware Oracle E-Business Suite Adapter User’s Guide本指南包括Oracle电子商务套件使用适配器（原名为Oracle的Oracle融合中间件11g 发布应用程序适配器）在开发Oracle电子商务套件和贸易伙伴之间的集成。这本书在Oracle融合中间件12C 文档库和Oracle融合中间件11g 文档库是可用的。 Oracle Diagnostics Framework User’s Guide Oracle诊断框架用户指南本手册包含使用Oracle诊断框架实现和管理Oracle电子商务套件的诊断测试的信息。 Oracle E-Business Suite Concepts Oracle电子商务套件概念本书旨在为所有计划部署Oracle电子商务套件版本12.2的人，或考虑对配置进行重大更改。在描述了Oracle电子商务套件体系结构和技术堆栈之后，它将重点放在战略主题上，给出了实现特定目标所需的操作的概要，以及安装和配置选项。 Oracle E-Business Suite CRM System Administrator’s Guide Oracle电子商务套件CRM系统管理员指南本手册介绍了如何实施CRM技术基础（JTT）和使用它的系统管理员控制台。 Oracle E-Business Suite Desktop Integration Framework Developer’s Guide Oracle电子商务套件桌面集成框架开发指南Oracle电子商务套件桌面集成框架是一种开发工具，它允许您定义与Oracle Web应用程序桌面集成器一起使用的自定义集成器。本指南描述了如何定义和管理集成商和所有相关的支持对象，以及如何下载和上传集成定义。 Oracle E-Business Suite Developer’s Guide Oracle电子商务套件开发指南本指南包含Oracle电子商务套件开发人员遵循的编码标准。它描述了Oracle应用对象库组件需要实施Oracle电子商务套件的用户界面在 Oracle电子商务套件的用户界面标准描述的形式为基础的产品。它提供了信息，帮助您构建定制的Oracle表单开发人员表单，使它们与Oracle电子商务套件集成。此外，本指南如并发程序、弹性域，邮件功能的自定义信息，并记录。 Oracle E-Business Suite Flexfields Guide Oracle电子商务套件弹性域指南本指南提供了弹性域的规划，安装，和Oracle电子商务套件的实施团队的参考信息，以及负责Oracle电子商务套件产品数据维护用户。本指南还提供了创建自定义报告信息弹性域数据。 Oracle E-Business Suite Maintenance Guide Oracle电子商务套件维护指南本指南介绍了如何修补一个Oracle电子商务套件系统，描述了采用补丁工具和提供执行典型的修补操作指导和技巧。它还描述了可以帮助系统顺利运行的维护策略和工具。 Oracle E-Business Suite Mobile Apps Administrator’s Guide, Release 12.1 and 12.2 Oracle电子商务套件移动应用程序管理员指南， 第12.1版和第12.2版本指南描述了如何设置Oracle电子商务套件实例，以支持Oracle电子商务套件移动应用程序的连接。它还描述了配置Oracle电子商务套件移动应用程序和设置任务以支持支持移动应用程序的推送通知的常见管理任务。日志和故障排除信息也包括在这本书中。 Oracle E-Business Suite Mobile Apps Developer’s Guide, Release 12.1 and 12.2本指南描述了如何通过使用移动应用程序归档（MAA）文件以及如何实现企业品牌来开发企业分布式移动应用程序。它还解释了支持移动应用程序实现推送通知所需的任务。此外，它还包括如何使用Oracle电子商务套件REST服务来开发定制的移动应用程序，通过使用Oracle电子商务套件移动基金的登录组件或使用任何移动应用程序开发框架，如果需要的话。 Oracle E-Business Suite Multiple Organizations Implementation Guide oracle电子商务套件多组织实施指南本指南描述Oracle电子商务套件中的多组织特性。它详细描述了如何在Oracle电子商务套件中与多个组织有效地建立和工作。 Oracle E-Business Suite Security Guide Oracle电子商务套件安全指南本指南包含关于安全相关主题的全面信息，包括访问控制、用户管理、功能安全、数据安全、安全配置和审计。它还描述了如何将Oracle电子商务套件集成到单点登录环境中。 Oracle E-Business Suite Setup Guide Oracle电子商务套件设置指南本指南包含系统配置任务的信息，这些任务在安装之后进行，或者当系统发生重大变化时。所描述的活动包括定义并发程序和管理器、启用Oracle应用程序管理器功能以及设置打印机和联机帮助。 Oracle E-Business Suite User’s Guide Oracle电子商务套件用户指南本指南说明如何使用Oracle电子商务套件的用户界面（UI）导航、输入和查询数据，并运行并发请求。它包括关于设置首选项和定制UI的信息。此外，本指南还介绍了Oracle电子商务套件的辅助功能和键盘快捷方式。 Oracle E-Business Suite User Interface Standards for Forms-Based Products 基于表单产品的Oracle电子商务套件用户接口标准本指南包含了Oracle电子商务套件开发人员所遵循的用户界面（UI）标准。它描述了Oracle电子商务套件产品的UI，以及如何将此UI应用到使用Oracle Forms构建的应用程序的设计中。 Oracle E-Business Suite Integrated SOA Gateway User’s Guide Oracle电子商务套件集成SOA网关用户指南本指南描述了高水平服务的实现过程，说明用户可以浏览和查看处于Oracle集成库中的集成接口定义和服务。 Oracle E-Business Suite Integrated SOA Gateway Implementation Guide Oracle电子商务套件集成SOA网关实现指南本指南解释了集成管理员如何管理和管理集成接口的Web服务活动，包括本地打包集成接口、组合服务（BPEL类型）和自定义集成接口。它还描述了如何使用Oracle工作流业务事件系统从Oracle电子商务套件调用Web服务，以及如何管理Web服务安全性、配置日志和监视SOAP消息。 Oracle E-Business Suite Integrated SOA Gateway Developer’s Guide Oracle电子商务套件集成SOA网关开发人员指南本指南描述集成开发人员如何执行端到端服务集成活动。这些包括Web服务编排离散成有意义的端到端的业务使用业务流程执行语言（BPEL）流程，并部署BPEL流程在运行时。本指南还解释了如何使用服务调用框架调用Web服务。这包括定义Web服务调用元数据、调用Web服务和测试Web服务调用。 Oracle e-Commerce Gateway User’s Guide oracle电子商务网关用户指南本指南描述了Oracle电子商务网关的功能和必要的设置步骤，以便Oracle电子商务套件通过电子数据交换（EDI）与贸易伙伴进行业务往来。它还描述了如何为提取出的事务运行提取程序、入站事务的导入程序以及相关报告。 Oracle e-Commerce Gateway Implementation Guide oracle电子商务网关实现指南本指南描述了实现细节，重点介绍了交易伙伴、代码转换和Oracle电子商务套件所需的额外安装步骤。它还提供了事务接口文件、故障排除信息和如何定制EDI事务的描述的体系结构指南。 Oracle iSetup Developer’s Guide Oracle isetup开发者指南本手册介绍了如何建立、测试和部署Oracle isetup框架接口。 Oracle iSetup User’s Guide Oracle isetup用户指南本指南介绍了如何使用Oracle isetup迁移数据之间的Oracle电子商务套件的不同实例和生成报告。它还包含关于数据迁移的配置、实例映射和种子模板的信息。 Oracle Report Manager User’s Guide Oracle报表管理器用户指南Oracle报表管理器是一个在线报表分发系统，它提供一个安全和集中的位置来生成和管理点对点报告。Oracle报表管理器用户可以是报表生成程序，也可以是报表用户。使用此指南了解关于设置和使用Oracle报表管理器的信息。 Oracle Web Applications Desktop Integrator Implementation and Administration Guide Web应用程序桌面集成实现和管理指南Oracle Web应用程序桌面集成器将Oracle电子商务套件功能引入电子表格，其中熟悉的数据输入和建模技术可用于完成Oracle电子商务套件任务。你可以在桌面上创建格式化的电子表格，让你下载、查看、编辑和创建Oracle电子商务套件数据，然后上传。本指南描述了如何实现Oracle Web应用程序桌面集成器以及如何定义映射、布局、样式表和其他设置选项。 Oracle Workflow Administrator’s Guide oracle工作流管理员指南本指南说明如何完成包括工作流支持的流程的任何产品所必需的设置步骤。它还描述了如何使用Oracle应用程序管理器管理工作流过程和业务事件，如何监视运行时工作流过程的进度，以及如何管理发送给工作流用户的通知。 Oracle Workflow Developer’s Guide oracle工作流开发者指南本指南说明如何定义新的工作流业务流程，并定制现有的Oracle电子商务套件嵌入的工作流流程。它还描述了如何为Oracle电子商务套件的Oracle Mobile批准配置消息元数据，以及如何定义和定制业务事件和事件订阅。 Oracle Workflow User’s Guide oracle工作流用户指南本指南描述用户如何查看和响应工作流通知并监视其工作流过程的进展。 Oracle Workflow API Reference Oracle工作流api参考本指南描述了为开发人员和管理员访问Oracle工作流所提供的API。 Oracle Workflow Client Installation Guide oracle工作流客户端安装指南本指南描述了如何为Oracle电子商务套件安装Oracle工作流生成器和Oracle XML网关消息设计器客户端组件。 Oracle XML Gateway User’s Guide oracle XML 网关用户指南本指南描述了Oracle XML网关功能和Oracle XML网关体系结构中的每个组件，包括消息设计器、Oracle XML网关设置、执行引擎、消息队列和Oracle传输代理。它还解释了如何使用协作历史记录所有与贸易伙伴交换的业务交易和消息。与Oracle工作流业务事件系统和业务到业务事务的集成也在本指南中讨论。 Oracle XML Publisher Report Designer’s Guide Oracle XML 发布者报表设计器指南Oracle XML Publisher是一个基于模板的报表解决方案，将XML数据与RTF或PDF格式的模板产生的各种输出，满足各种业务需求。使用微软Word或Adobe Acrobat作为设计工具，您可以创建完美的报告从Oracle电子商务套件。使用此指南设计报表布局。此指南可通过Oracle电子商务套件联机帮助获得。有关更多信息，参见： 笔记使用Oracle商业智能发布10g的Oracle电子商务套件12.2版，我的Oracle支持知识文档1640073.1。 Oracle XML Publisher Administration and Developer’s Guide Oracle发布者管理和开发指南Oracle XML Publisher是一个基于模板的报表解决方案，将XML数据与RTF或PDF格式的模板产生的各种输出，满足各种业务需求。输出包括：PDF、HTML、Excel、RTF和电子文本（EDI和EFT交易）。Oracle发布者可以基于现有的Oracle电子商务套件报告数据生成报告，也可以使用Oracle发布者的数据提取引擎来构建自己的查询。Oracle XML Publisher也提供了一个强大的API来管理你的报告通过电子邮件，传真，交付安全的FTP，WebDAV，打印机，和更多。本指南描述了如何设置和管理oracle发布服务器，以及如何使用应用程序编程接口构建自定义解决方案。此指南可通过Oracle电子商务套件联机帮助获得。有关更多信息，参见： 笔记使用Oracle商业智能发布10g的Oracle电子商务套件12.2版，我的Oracle支持知识文档1640073.1。]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>E-Business Suite</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>E-Business Suite</tag>
+        <tag>R12.2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Oracle 认证指南(OCA OCP OCM)]]></title>
+    <url>%2F2019%2F06%2F26%2F20190626-oracle-certification-guide%2F</url>
+    <content type="text"><![CDATA[初学者可能并不清楚OCA、OCP、OCM三者的区别，今天CUUG将从费用、获取条件、含金量等角度为大家详细讲解Oracle三大认证的区别。 一、英文原意的区别： Oracle数据库管理员认证专员（OCA）： Oracle Certified Associate Oracle数据库管理员认证专家（OCP）： Oracle Certified Professional Oracle数据库管理员认证大师（OCM）： Oracle Certified Master 二、认证获得方式区别： OCA：不需要原厂培训，需要通过两门考试 OCP ：OCA与OCP认证可以一起考试，通过OCP至少需要参加一门原厂培训或WDP，通过三门考试 OCM：需要至少再参加两门原厂高级课程培训或者WDP培训课程，并通过两天的上机考试 三、考试费用区别（USD为美元）： OCA：两门考试费用为150USD*2 OCP：从OCA升级到OCP需支付150USD考试费用以及原厂培训费用（最低6K），或150USD考试费用以及WDP培训费用；直接考OCP需支付三门考试费用150USD*3以及原厂培训一门或WDP培训费用。 OCM：OCM考试报名费用为每门8K。每门课程的原厂培训费用列表价为一万四千元左右，但WDP培训可以找渠道打折优惠。 四、考试内容区别： OCA：掌握课程Administration Workshop I（042）以及一门SQL相关课程Introduction to SQL （007）或SQL Tuning Workshop（047）。 OCP：掌握课程Administration Workshop I以及一门SQL相关课程Introduction to SQL （007）或SQL Tuning Workshop（047）。以及掌握课程Administration Workshop II（043）；参加一门原厂培训。 OCM：参加认证的人员必须要获取Oracle数据库OCP证书；完成Oracle原厂提供的两门高级课程或WDP课程；两天上机操作考试合格。 五、含金量区别 OCA：数据库专业人员踏上Oracle数据库认证之途的第一步，表示具备Oracle数据库管理的基础知识。 OCP：数据库专业人员掌握Oracle专项技术的行业认可证明，证明持证者能够以最高效的方式建立和管理关键的Oracle数据库功能。 OCM：针对在Oracle技术领域拥有多年实践经验，并且经过高级技能培训的最高层次的数据库专业人员，堪称Oracle权威。 六、就业形势区别 OCA：能有机会进入DBA相关行业已经非常不错了，年薪4万左右 OCP：是一块不错的敲门砖，但是是否能够胜任工作仍需在工作中考察实际操作，年薪5万至10万 OCM:国内只有几百人获得，年薪12万以上 温馨提示：OCM现在仍是很多DBA的向往目标，但是证书毕竟不是万能的，能够把Oracle操作得如鱼得水才是制胜的法宝。对于刚踏入社会的新鲜人来说，考OCP证书还是会为您带来更多的机会。但是切忌为了收集证书而考证，学到Oracle的高端技术才是为您打开了一条通往DBA金领的大门。与原厂培训的三天、五天培训和应试培训不同，花同样的价格，在CUUG您可以获得长达23天大量的操作、实例教学，让您学到Oracle搭建环境、备份与恢复、性能调优等管理实用技能，为您的Oracle操作打下坚实的基础。]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>Database</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>Database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F06%2F25%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>

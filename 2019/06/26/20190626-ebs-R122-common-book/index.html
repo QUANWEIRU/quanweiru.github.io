@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Oracle,E-Business Suite,R12.2,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="儒此奇哉" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Related Information Sources这本书包含在Oracle电子商务套件文档库中。如果该指南将您引用到其他Oracle电子商务套件文档中，只使用这些指南的最新版本12.2版本。   Oracle Alert User’s Guide Oracle alert 用户指南本指南说明如何定义周期和事件警报，以监视Oracle电子商务套件数据的状态。   Oracle Applica">
+<meta name="keywords" content="Oracle,E-Business Suite,R12.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="E-Business Suite R12.2 常用手册">
+<meta property="og:url" content="https://quanweiru.github.io/2019/06/26/20190626-ebs-R122-common-book/index.html">
+<meta property="og:site_name" content="儒此奇哉">
+<meta property="og:description" content="Related Information Sources这本书包含在Oracle电子商务套件文档库中。如果该指南将您引用到其他Oracle电子商务套件文档中，只使用这些指南的最新版本12.2版本。   Oracle Alert User’s Guide Oracle alert 用户指南本指南说明如何定义周期和事件警报，以监视Oracle电子商务套件数据的状态。   Oracle Applica">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190626185230.png">
+<meta property="og:updated_time" content="2019-06-26T11:33:53.442Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="E-Business Suite R12.2 常用手册">
+<meta name="twitter:description" content="Related Information Sources这本书包含在Oracle电子商务套件文档库中。如果该指南将您引用到其他Oracle电子商务套件文档中，只使用这些指南的最新版本12.2版本。   Oracle Alert User’s Guide Oracle alert 用户指南本指南说明如何定义周期和事件警报，以监视Oracle电子商务套件数据的状态。   Oracle Applica">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190626185230.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://quanweiru.github.io/2019/06/26/20190626-ebs-R122-common-book/">
+
+
+
+
+
+  <title>E-Business Suite R12.2 常用手册 | 儒此奇哉</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">儒此奇哉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/06/26/20190626-ebs-R122-common-book/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="全威儒 / Weiru Quan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="儒此奇哉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">E-Business Suite R12.2 常用手册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T15:16:08+08:00">
+                2019-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/E-Business-Suite/" itemprop="url" rel="index">
+                    <span itemprop="name">E-Business Suite</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190626185230.png" alt></p>
+<blockquote>
+<p><strong>Related Information Sources</strong><br>这本书包含在Oracle电子商务套件文档库中。如果该指南将您引用到其他Oracle电子商务套件文档中，只使用这些指南的最新版本12.2版本。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Alert User’s Guide Oracle alert 用户指南</strong><br>本指南说明如何定义周期和事件警报，以监视Oracle电子商务套件数据的状态。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Application Framework Developer’s Guide Oracle应用程序框架开发者指南</strong><br>本指南包含了Oracle电子商务套件开发人员编写的应用Oracle应用程序框架构建的应用程序的编码标准。<br>本指南以PDF格式在My Oracle Support和与Oracle应用推广在JDeveloper 10G 在线文档是可用的。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Application Framework Personalization Guide Oracle应用程序框架个性化指南</strong><br>本指南涵盖了设计时和运行时的个性化与Oracle应用框架构建的应用程序方面</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Fusion Middleware Oracle E-Business Suite Adapter User’s Guide</strong><br>本指南包括Oracle电子商务套件使用适配器（原名为Oracle的Oracle融合中间件11g 发布应用程序适配器）在开发Oracle电子商务套件和贸易伙伴之间的集成。<br>这本书在Oracle融合中间件12C 文档库和Oracle融合中间件11g 文档库是可用的。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Diagnostics Framework User’s Guide Oracle诊断框架用户指南</strong><br>本手册包含使用Oracle诊断框架实现和管理Oracle电子商务套件的诊断测试的信息。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Concepts Oracle电子商务套件概念</strong><br>本书旨在为所有计划部署Oracle电子商务套件版本12.2的人，或考虑对配置进行重大更改。<br>在描述了Oracle电子商务套件体系结构和技术堆栈之后，它将重点放在战略主题上，给出了实现特定目标所需的操作的概要，以及安装和配置选项。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite CRM System Administrator’s Guide Oracle电子商务套件CRM系统管理员指南</strong><br>本手册介绍了如何实施CRM技术基础（JTT）和使用它的系统管理员控制台。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Desktop Integration Framework Developer’s Guide Oracle电子商务套件桌面集成框架开发指南</strong><br>Oracle电子商务套件桌面集成框架是一种开发工具，它允许您定义与Oracle Web应用程序桌面集成器一起使用的自定义集成器。<br>本指南描述了如何定义和管理集成商和所有相关的支持对象，以及如何下载和上传集成定义。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Developer’s Guide Oracle电子商务套件开发指南</strong><br>本指南包含Oracle电子商务套件开发人员遵循的编码标准。<br>它描述了Oracle应用对象库组件需要实施Oracle电子商务套件的用户界面在 Oracle电子商务套件的用户界面标准描述的形式为基础的产品。<br>它提供了信息，帮助您构建定制的Oracle表单开发人员表单，使它们与Oracle电子商务套件集成。<br>此外，本指南如并发程序、弹性域，邮件功能的自定义信息，并记录。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Flexfields Guide Oracle电子商务套件弹性域指南</strong><br>本指南提供了弹性域的规划，安装，和Oracle电子商务套件的实施团队的参考信息，以及负责Oracle电子商务套件产品数据维护用户。<br>本指南还提供了创建自定义报告信息弹性域数据。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Maintenance Guide Oracle电子商务套件维护指南</strong><br>本指南介绍了如何修补一个Oracle电子商务套件系统，描述了采用补丁工具和提供执行典型的修补操作指导和技巧。<br>它还描述了可以帮助系统顺利运行的维护策略和工具。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Mobile Apps Administrator’s Guide, Release 12.1 and 12.2</strong> Oracle电子商务套件移动应用程序管理员指南，    第12.1版和第12.2版<br>本指南描述了如何设置Oracle电子商务套件实例，以支持Oracle电子商务套件移动应用程序的连接。<br>它还描述了配置Oracle电子商务套件移动应用程序和设置任务以支持支持移动应用程序的推送通知的常见管理任务。<br>日志和故障排除信息也包括在这本书中。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Mobile Apps Developer’s Guide, Release 12.1 and 12.2</strong><br>本指南描述了如何通过使用移动应用程序归档（MAA）文件以及如何实现企业品牌来开发企业分布式移动应用程序。<br>它还解释了支持移动应用程序实现推送通知所需的任务。<br>此外，它还包括如何使用Oracle电子商务套件REST服务来开发定制的移动应用程序，通过使用Oracle电子商务套件移动基金的登录组件或使用任何移动应用程序开发框架，如果需要的话。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Multiple Organizations Implementation Guide oracle电子商务套件多组织实施指南</strong><br>本指南描述Oracle电子商务套件中的多组织特性。<br>它详细描述了如何在Oracle电子商务套件中与多个组织有效地建立和工作。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Security Guide Oracle电子商务套件安全指南</strong><br>本指南包含关于安全相关主题的全面信息，包括访问控制、用户管理、功能安全、数据安全、安全配置和审计。<br>它还描述了如何将Oracle电子商务套件集成到单点登录环境中。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Setup Guide Oracle电子商务套件设置指南</strong><br>本指南包含系统配置任务的信息，这些任务在安装之后进行，或者当系统发生重大变化时。<br>所描述的活动包括定义并发程序和管理器、启用Oracle应用程序管理器功能以及设置打印机和联机帮助。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite User’s Guide Oracle电子商务套件用户指南</strong><br>本指南说明如何使用Oracle电子商务套件的用户界面（UI）导航、输入和查询数据，并运行并发请求。<br>它包括关于设置首选项和定制UI的信息。此外，本指南还介绍了Oracle电子商务套件的辅助功能和键盘快捷方式。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite User Interface Standards for Forms-Based Products 基于表单产品的Oracle电子商务套件用户接口标准</strong><br>本指南包含了Oracle电子商务套件开发人员所遵循的用户界面（UI）标准。它描述了Oracle电子商务套件产品的UI，以及如何将此UI应用到使用Oracle Forms构建的应用程序的设计中。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Integrated SOA Gateway User’s Guide Oracle电子商务套件集成SOA网关用户指南</strong><br>本指南描述了高水平服务的实现过程，说明用户可以浏览和查看处于Oracle集成库中的集成接口定义和服务。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide Oracle电子商务套件集成SOA网关实现指南</strong><br>本指南解释了集成管理员如何管理和管理集成接口的Web服务活动，包括本地打包集成接口、组合服务（BPEL类型）和自定义集成接口。<br>它还描述了如何使用Oracle工作流业务事件系统从Oracle电子商务套件调用Web服务，以及如何管理Web服务安全性、配置日志和监视SOAP消息。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle E-Business Suite Integrated SOA Gateway Developer’s Guide Oracle电子商务套件集成SOA网关开发人员指南</strong><br>本指南描述集成开发人员如何执行端到端服务集成活动。这些包括Web服务编排离散成有意义的端到端的业务使用业务流程执行语言（BPEL）流程，并部署BPEL流程在运行时。<br>本指南还解释了如何使用服务调用框架调用Web服务。<br>这包括定义Web服务调用元数据、调用Web服务和测试Web服务调用。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle e-Commerce Gateway User’s Guide oracle电子商务网关用户指南</strong><br>本指南描述了Oracle电子商务网关的功能和必要的设置步骤，以便Oracle电子商务套件通过电子数据交换（EDI）与贸易伙伴进行业务往来。<br>它还描述了如何为提取出的事务运行提取程序、入站事务的导入程序以及相关报告。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle e-Commerce Gateway Implementation Guide oracle电子商务网关实现指南</strong><br>本指南描述了实现细节，重点介绍了交易伙伴、代码转换和Oracle电子商务套件所需的额外安装步骤。<br>它还提供了事务接口文件、故障排除信息和如何定制EDI事务的描述的体系结构指南。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle iSetup Developer’s Guide Oracle isetup开发者指南</strong><br>本手册介绍了如何建立、测试和部署Oracle isetup框架接口。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle iSetup User’s Guide Oracle isetup用户指南</strong><br>本指南介绍了如何使用Oracle isetup迁移数据之间的Oracle电子商务套件的不同实例和生成报告。<br>它还包含关于数据迁移的配置、实例映射和种子模板的信息。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Report Manager User’s Guide Oracle报表管理器用户指南</strong><br>Oracle报表管理器是一个在线报表分发系统，它提供一个安全和集中的位置来生成和管理点对点报告。<br>Oracle报表管理器用户可以是报表生成程序，也可以是报表用户。<br>使用此指南了解关于设置和使用Oracle报表管理器的信息。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Web Applications Desktop Integrator Implementation and Administration Guide Web应用程序桌面集成实现和管理指南</strong><br>Oracle Web应用程序桌面集成器将Oracle电子商务套件功能引入电子表格，其中熟悉的数据输入和建模技术可用于完成Oracle电子商务套件任务。<br>你可以在桌面上创建格式化的电子表格，让你下载、查看、编辑和创建Oracle电子商务套件数据，然后上传。<br>本指南描述了如何实现Oracle Web应用程序桌面集成器以及如何定义映射、布局、样式表和其他设置选项。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Workflow Administrator’s Guide oracle工作流管理员指南</strong><br>本指南说明如何完成包括工作流支持的流程的任何产品所必需的设置步骤。<br>它还描述了如何使用Oracle应用程序管理器管理工作流过程和业务事件，如何监视运行时工作流过程的进度，以及如何管理发送给工作流用户的通知。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Workflow Developer’s Guide oracle工作流开发者指南</strong><br>本指南说明如何定义新的工作流业务流程，并定制现有的Oracle电子商务套件嵌入的工作流流程。<br>它还描述了如何为Oracle电子商务套件的Oracle Mobile批准配置消息元数据，以及如何定义和定制业务事件和事件订阅。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Workflow User’s Guide oracle工作流用户指南</strong><br>本指南描述用户如何查看和响应工作流通知并监视其工作流过程的进展。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Workflow API Reference Oracle工作流api参考</strong><br>本指南描述了为开发人员和管理员访问Oracle工作流所提供的API。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle Workflow Client Installation Guide oracle工作流客户端安装指南</strong><br>本指南描述了如何为Oracle电子商务套件安装Oracle工作流生成器和Oracle XML网关消息设计器客户端组件。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle XML Gateway User’s Guide oracle XML 网关用户指南</strong><br>本指南描述了Oracle XML网关功能和Oracle XML网关体系结构中的每个组件，包括消息设计器、Oracle XML网关设置、执行引擎、消息队列和Oracle传输代理。<br>它还解释了如何使用协作历史记录所有与贸易伙伴交换的业务交易和消息。<br>与Oracle工作流业务事件系统和业务到业务事务的集成也在本指南中讨论。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle XML Publisher Report Designer’s Guide Oracle XML 发布者报表设计器指南</strong><br>Oracle XML Publisher是一个基于模板的报表解决方案，将XML数据与RTF或PDF格式的模板产生的各种输出，满足各种业务需求。<br>使用微软Word或Adobe Acrobat作为设计工具，您可以创建完美的报告从Oracle电子商务套件。<br>使用此指南设计报表布局。<br>此指南可通过Oracle电子商务套件联机帮助获得。<br>有关更多信息，参见： 笔记使用Oracle商业智能发布10g的Oracle电子商务套件12.2版，我的Oracle支持知识文档1640073.1。</p>
+</blockquote>
+<blockquote>
+<p><strong>Oracle XML Publisher Administration and Developer’s Guide Oracle发布者管理和开发指南</strong><br>Oracle XML Publisher是一个基于模板的报表解决方案，将XML数据与RTF或PDF格式的模板产生的各种输出，满足各种业务需求。<br>输出包括：PDF、HTML、Excel、RTF和电子文本（EDI和EFT交易）。<br>Oracle发布者可以基于现有的Oracle电子商务套件报告数据生成报告，也可以使用Oracle发布者的数据提取引擎来构建自己的查询。<br>Oracle XML Publisher也提供了一个强大的API来管理你的报告通过电子邮件，传真，交付安全的FTP，WebDAV，打印机，和更多。<br>本指南描述了如何设置和管理oracle发布服务器，以及如何使用应用程序编程接口构建自定义解决方案。<br>此指南可通过Oracle电子商务套件联机帮助获得。<br>有关更多信息，参见： 笔记使用Oracle商业智能发布10g的Oracle电子商务套件12.2版，我的Oracle支持知识文档1640073.1。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+            <a href="/tags/E-Business-Suite/" rel="tag"># E-Business Suite</a>
+          
+            <a href="/tags/R12-2/" rel="tag"># R12.2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/26/20190626-oracle-certification-guide/" rel="next" title="Oracle 认证指南(OCA OCP OCM)">
+                <i class="fa fa-chevron-left"></i> Oracle 认证指南(OCA OCP OCM)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/26/20190626-ebs-FRM-92050/" rel="prev" title="IE(8,9,11)登录FORM提示FRM-92050">
+                IE(8,9,11)登录FORM提示FRM-92050 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="全威儒 / Weiru Quan">
+            
+              <p class="site-author-name" itemprop="name">全威儒 / Weiru Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QUANWEIRU" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:quanweiru@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3009164983" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="tencent://message/?uin=609990936&Site=&Menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">全威儒 / Weiru Quan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

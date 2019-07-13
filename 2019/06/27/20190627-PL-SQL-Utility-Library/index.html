@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Oracle,PL/SQL,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="儒此奇哉" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="alexandria-plsql-utils Oracle PL/SQL Utility Library  This library is a collection of various utility packages for PL/SQL, as well as links to useful libraries hosted and maintained elsewhere. Generat">
+<meta name="keywords" content="Oracle,PL&#x2F;SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle PL&#x2F;SQL Utility Library">
+<meta property="og:url" content="https://quanweiru.github.io/2019/06/27/20190627-PL-SQL-Utility-Library/index.html">
+<meta property="og:site_name" content="儒此奇哉">
+<meta property="og:description" content="alexandria-plsql-utils Oracle PL/SQL Utility Library  This library is a collection of various utility packages for PL/SQL, as well as links to useful libraries hosted and maintained elsewhere. Generat">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190627163844.png">
+<meta property="og:updated_time" content="2019-06-27T09:11:15.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle PL&#x2F;SQL Utility Library">
+<meta name="twitter:description" content="alexandria-plsql-utils Oracle PL/SQL Utility Library  This library is a collection of various utility packages for PL/SQL, as well as links to useful libraries hosted and maintained elsewhere. Generat">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190627163844.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://quanweiru.github.io/2019/06/27/20190627-PL-SQL-Utility-Library/">
+
+
+
+
+
+  <title>Oracle PL/SQL Utility Library | 儒此奇哉</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">儒此奇哉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/06/27/20190627-PL-SQL-Utility-Library/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="全威儒 / Weiru Quan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="儒此奇哉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oracle PL/SQL Utility Library</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-27T16:37:14+08:00">
+                2019-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/PL-SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">PL/SQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="alexandria-plsql-utils"><a href="#alexandria-plsql-utils" class="headerlink" title="alexandria-plsql-utils"></a>alexandria-plsql-utils</h2><blockquote>
+<p><a href="https://github.com/QUANWEIRU/alexandria-plsql-utils" target="_blank" rel="noopener">Oracle PL/SQL Utility Library</a><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190627163844.png" alt></p>
+</blockquote>
+<p>This library is a collection of various utility packages for PL/SQL, as well as links to useful libraries hosted and maintained elsewhere.</p>
+<h2 id="Generate-PDF-files-using-PL-SQL"><a href="#Generate-PDF-files-using-PL-SQL" class="headerlink" title="Generate PDF files using PL/SQL"></a>Generate PDF files using PL/SQL</h2><ul>
+<li><a href="https://technology.amis.nl/2012/04/11/generating-a-pdf-document-with-some-plsql-as_pdf_mini-as_pdf3/" target="_blank" rel="noopener">https://technology.amis.nl/2012/04/11/generating-a-pdf-document-with-some-plsql-as_pdf_mini-as_pdf3/</a></li>
+<li><a href="https://technology.amis.nl/2010/10/20/as_pdf-generating-a-pdf-document-with-some-plsql/" target="_blank" rel="noopener">https://technology.amis.nl/2010/10/20/as_pdf-generating-a-pdf-document-with-some-plsql/</a></li>
+<li><a href="http://www.erasme.org/PL-FPDF,1337?lang=en" target="_blank" rel="noopener">http://www.erasme.org/PL-FPDF,1337?lang=en</a></li>
+<li><a href="http://ora-00001.blogspot.com/2009/10/free-pdf-package-for-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2009/10/free-pdf-package-for-plsql.html</a></li>
+<li><a href="http://sourceforge.net/projects/pljrxml2pdf/" target="_blank" rel="noopener">http://sourceforge.net/projects/pljrxml2pdf/</a></li>
+<li><a href="http://www.plpdf.com/" target="_blank" rel="noopener">http://www.plpdf.com/</a></li>
+<li>PDF_BUILDER_PKG</li>
+<li>PDFGEN_PKG</li>
+</ul>
+<h2 id="Generate-Excel-files-using-PL-SQL"><a href="#Generate-Excel-files-using-PL-SQL" class="headerlink" title="Generate Excel files using PL/SQL"></a>Generate Excel files using PL/SQL</h2><ul>
+<li><a href="https://technology.amis.nl/2011/02/19/create-an-excel-file-with-plsql/" target="_blank" rel="noopener">https://technology.amis.nl/2011/02/19/create-an-excel-file-with-plsql/</a></li>
+<li><a href="http://www.jasonsdevelopercorner.com/?page_id=8" target="_blank" rel="noopener">http://www.jasonsdevelopercorner.com/?page_id=8</a></li>
+<li><a href="https://xml-spreadsheet.samplecode.oracle.com/" target="_blank" rel="noopener">https://xml-spreadsheet.samplecode.oracle.com/</a></li>
+<li><a href="http://sanjeev-oracle-world.blogspot.com/2007/06/create-excel-workbook-by-plsql-code.html" target="_blank" rel="noopener">http://sanjeev-oracle-world.blogspot.com/2007/06/create-excel-workbook-by-plsql-code.html</a></li>
+<li><a href="http://matzberger.de/oracle/spreadsheet-en.html" target="_blank" rel="noopener">http://matzberger.de/oracle/spreadsheet-en.html</a></li>
+<li><a href="http://www.protalk.in/oracle/plsql-tips-package-for-exporting-data-to-excel/" target="_blank" rel="noopener">http://www.protalk.in/oracle/plsql-tips-package-for-exporting-data-to-excel/</a></li>
+<li>XLSX_BUILDER_PKG</li>
+<li>SYLK_UTIL_PKG</li>
+</ul>
+<h2 id="Generate-RTF-files-using-PL-SQL"><a href="#Generate-RTF-files-using-PL-SQL" class="headerlink" title="Generate RTF files using PL/SQL"></a>Generate RTF files using PL/SQL</h2><ul>
+<li><a href="http://monkeyonoracle.blogspot.com/2009/07/dynamic-rtf-documents-revisited.html" target="_blank" rel="noopener">http://monkeyonoracle.blogspot.com/2009/07/dynamic-rtf-documents-revisited.html</a></li>
+</ul>
+<h2 id="Working-with-Office-2007-OOXML-files-using-PL-SQL"><a href="#Working-with-Office-2007-OOXML-files-using-PL-SQL" class="headerlink" title="Working with Office 2007 (OOXML) files using PL/SQL"></a>Working with Office 2007 (OOXML) files using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/02/working-with-office-2007-ooxml-files.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/02/working-with-office-2007-ooxml-files.html</a></li>
+<li><a href="https://technology.amis.nl/2010/06/09/parsing-a-microsoft-word-docx-and-unzip-zipfiles-with-plsql/" target="_blank" rel="noopener">https://technology.amis.nl/2010/06/09/parsing-a-microsoft-word-docx-and-unzip-zipfiles-with-plsql/</a></li>
+<li><a href="http://www.docufy.be/" target="_blank" rel="noopener">http://www.docufy.be/</a></li>
+<li>OOXML_UTIL_PKG</li>
+</ul>
+<h2 id="Zip-and-unzip-files-using-PL-SQL"><a href="#Zip-and-unzip-files-using-PL-SQL" class="headerlink" title="Zip and unzip files using PL/SQL"></a>Zip and unzip files using PL/SQL</h2><ul>
+<li><a href="https://technology.amis.nl/2010/03/13/utl_compress-gzip-and-zlib/" target="_blank" rel="noopener">https://technology.amis.nl/2010/03/13/utl_compress-gzip-and-zlib/</a></li>
+<li>ZIP_UTIL_PKG</li>
+</ul>
+<h2 id="Generate-and-parse-CSV-files-using-PL-SQL"><a href="#Generate-and-parse-CSV-files-using-PL-SQL" class="headerlink" title="Generate and parse CSV files using PL/SQL"></a>Generate and parse CSV files using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2010/04/select-from-spreadsheet-or-how-to-parse.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2010/04/select-from-spreadsheet-or-how-to-parse.html</a></li>
+<li>CSV_UTIL_PKG</li>
+</ul>
+<h2 id="Generate-and-parse-RSS-feeds-using-PL-SQL"><a href="#Generate-and-parse-RSS-feeds-using-PL-SQL" class="headerlink" title="Generate and parse RSS feeds using PL/SQL"></a>Generate and parse RSS feeds using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-one.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-one.html</a></li>
+<li><a href="http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-two.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/02/fun-with-rss-and-plsql-part-two.html</a></li>
+<li>RSS_UTIL_PKG</li>
+<li>Generate JSON using PL/SQL</li>
+<li><a href="http://ora-00001.blogspot.com/2010/02/ref-cursor-to-json.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2010/02/ref-cursor-to-json.html</a></li>
+<li>JSON_UTIL_PKG</li>
+<li>Parse JSON using PL/SQL</li>
+<li><a href="https://github.com/pljson/pljson" target="_blank" rel="noopener">https://github.com/pljson/pljson</a></li>
+<li><a href="http://reseau.erasme.org/pl-sql-library-for-JSON?lang=en" target="_blank" rel="noopener">http://reseau.erasme.org/pl-sql-library-for-JSON?lang=en</a></li>
+</ul>
+<h2 id="Transfer-files-FTP-using-PL-SQL"><a href="#Transfer-files-FTP-using-PL-SQL" class="headerlink" title="Transfer files (FTP) using PL/SQL"></a>Transfer files (FTP) using PL/SQL</h2><ul>
+<li><a href="http://www.oracle-base.com/articles/misc/FTPFromPLSQL.php" target="_blank" rel="noopener">http://www.oracle-base.com/articles/misc/FTPFromPLSQL.php</a></li>
+<li>FTP_UTIL_PKG</li>
+</ul>
+<h2 id="Send-email-SMTP-using-PL-SQL"><a href="#Send-email-SMTP-using-PL-SQL" class="headerlink" title="Send email (SMTP) using PL/SQL"></a>Send email (SMTP) using PL/SQL</h2><ul>
+<li><a href="http://www.oracle.com/technology/sample_code/tech/pl_sql/htdocs/Utl_Smtp_Sample.html" target="_blank" rel="noopener">http://www.oracle.com/technology/sample_code/tech/pl_sql/htdocs/Utl_Smtp_Sample.html</a></li>
+<li><a href="http://download.oracle.com/docs/cd/E10513_01/doc/apirefs.310/e12855/apex_mail.htm" target="_blank" rel="noopener">http://download.oracle.com/docs/cd/E10513_01/doc/apirefs.310/e12855/apex_mail.htm</a></li>
+<li>MAIL_UTIL_PKG</li>
+</ul>
+<h2 id="Receive-email-POP3-using-PL-SQL"><a href="#Receive-email-POP3-using-PL-SQL" class="headerlink" title="Receive email (POP3) using PL/SQL"></a>Receive email (POP3) using PL/SQL</h2><ul>
+<li>POP3_UTIL_PKG</li>
+<li>Receive email (POP3 and IMAP) using PL/SQL (and Java)</li>
+<li><a href="http://plsqlmailclient.sourceforge.net/" target="_blank" rel="noopener">http://plsqlmailclient.sourceforge.net/</a></li>
+</ul>
+<h2 id="Work-with-MS-Exchange-using-PL-SQL"><a href="#Work-with-MS-Exchange-using-PL-SQL" class="headerlink" title="Work with MS Exchange using PL/SQL"></a>Work with MS Exchange using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2012/05/ms-exchange-api-for-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2012/05/ms-exchange-api-for-plsql.html</a></li>
+<li>MS_EWS_UTIL_PKG</li>
+</ul>
+<h2 id="Integrate-with-Google-services-Google-Maps-Google-Calendar-Google-Translate-using-PL-SQL"><a href="#Integrate-with-Google-services-Google-Maps-Google-Calendar-Google-Translate-using-PL-SQL" class="headerlink" title="Integrate with Google services (Google Maps, Google Calendar, Google Translate) using PL/SQL"></a>Integrate with Google services (Google Maps, Google Calendar, Google Translate) using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2009/12/using-google-translate-from-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2009/12/using-google-translate-from-plsql.html</a></li>
+<li>GOOGLE_AUTH_PKG</li>
+<li>GOOGLE_CALENDAR_PKG</li>
+<li>GOOGLE_MAPS_PKG</li>
+<li>GOOGLE_TRANSLATE_PKG</li>
+</ul>
+<h2 id="Integrate-with-Amazon-web-services-Simple-Storage-Service-S3-using-PL-SQL"><a href="#Integrate-with-Amazon-web-services-Simple-Storage-Service-S3-using-PL-SQL" class="headerlink" title="Integrate with Amazon web services (Simple Storage Service S3) using PL/SQL"></a>Integrate with Amazon web services (Simple Storage Service S3) using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/03/amazon-s3-api-for-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/03/amazon-s3-api-for-plsql.html</a></li>
+<li><a href="http://jastraub.blogspot.com/2011/01/building-amazon-s3-client-with.html" target="_blank" rel="noopener">http://jastraub.blogspot.com/2011/01/building-amazon-s3-client-with.html</a></li>
+<li>AMAZON_AWS_AUTH_PKG</li>
+<li>AMAZON_AWS_S3_PKG</li>
+</ul>
+<h2 id="Integrate-with-PayPal-web-services"><a href="#Integrate-with-PayPal-web-services" class="headerlink" title="Integrate with PayPal web services"></a>Integrate with PayPal web services</h2><ul>
+<li>PAYPAL_UTIL_PKG</li>
+</ul>
+<h2 id="Integrate-with-Twitter-using-PL-SQL"><a href="#Integrate-with-Twitter-using-PL-SQL" class="headerlink" title="Integrate with Twitter using PL/SQL"></a>Integrate with Twitter using PL/SQL</h2><ul>
+<li><a href="http://oratweet.com/" target="_blank" rel="noopener">http://oratweet.com/</a></li>
+</ul>
+<h2 id="Call-SOAP-and-REST-web-services-using-PL-SQL"><a href="#Call-SOAP-and-REST-web-services-using-PL-SQL" class="headerlink" title="Call SOAP and REST web services using PL/SQL"></a>Call SOAP and REST web services using PL/SQL</h2><ul>
+<li><a href="http://jastraub.blogspot.com/2008/06/flexible-web-service-api.html" target="_blank" rel="noopener">http://jastraub.blogspot.com/2008/06/flexible-web-service-api.html</a></li>
+<li><a href="https://flex-ws-api.samplecode.oracle.com/" target="_blank" rel="noopener">https://flex-ws-api.samplecode.oracle.com/</a></li>
+<li><a href="http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/apex_web_service.htm#BABFFDEH" target="_blank" rel="noopener">http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/apex_web_service.htm#BABFFDEH</a></li>
+<li><a href="http://ora-00001.blogspot.com/2009/07/calling-soap-web-service-from-plsql-by.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2009/07/calling-soap-web-service-from-plsql-by.html</a></li>
+<li>FLEX_WS_API</li>
+<li>SOAP_CLIENT_UTIL_PKG</li>
+<li>T_SOAP_ENVELOPE</li>
+</ul>
+<h2 id="Publish-SOAP-web-service-using-PL-SQL"><a href="#Publish-SOAP-web-service-using-PL-SQL" class="headerlink" title="Publish SOAP web service using PL/SQL"></a>Publish SOAP web service using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/01/soap-server-in-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/01/soap-server-in-plsql.html</a></li>
+<li>SOAP_SERVER_PKG</li>
+</ul>
+<h2 id="Publish-REST-web-services-using-PL-SQL"><a href="#Publish-REST-web-services-using-PL-SQL" class="headerlink" title="Publish REST web services using PL/SQL"></a>Publish REST web services using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2009/07/creating-rest-web-service-with-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2009/07/creating-rest-web-service-with-plsql.html</a></li>
+<li><a href="http://www.oracle-base.com/articles/misc/XMLOverHTTP.php" target="_blank" rel="noopener">http://www.oracle-base.com/articles/misc/XMLOverHTTP.php</a></li>
+</ul>
+<h2 id="Regular-expressions-using-PL-SQL"><a href="#Regular-expressions-using-PL-SQL" class="headerlink" title="Regular expressions using PL/SQL"></a>Regular expressions using PL/SQL</h2><ul>
+<li>REGEXP_UTIL_PKG</li>
+</ul>
+<h2 id="String-date-and-math-utilities"><a href="#String-date-and-math-utilities" class="headerlink" title="String, date and math utilities"></a>String, date and math utilities</h2><ul>
+<li>DATE_UTIL_PKG</li>
+<li>MATH_UTIL_PKG</li>
+<li>STRING_UTIL_PKG</li>
+</ul>
+<h2 id="Encoding-and-data-type-utilities"><a href="#Encoding-and-data-type-utilities" class="headerlink" title="Encoding and data type utilities"></a>Encoding and data type utilities</h2><ul>
+<li>ENCODE_UTIL_PKG</li>
+<li>RAW_UTIL_PKG</li>
+</ul>
+<h2 id="SQL-utilities"><a href="#SQL-utilities" class="headerlink" title="SQL utilities"></a>SQL utilities</h2><ul>
+<li>SQL_BUILDER_PKG</li>
+<li>SQL_UTIL_PKG</li>
+</ul>
+<h2 id="XML-utilities"><a href="#XML-utilities" class="headerlink" title="XML utilities"></a>XML utilities</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/02/display-any-xml-as-clickable-tree-using.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/02/display-any-xml-as-clickable-tree-using.html</a></li>
+<li>XML_BUILDER_PKG</li>
+<li>XML_DATASET_PKG</li>
+<li>XML_STYLESHEET_PKG</li>
+<li>XML_UTIL_PKG</li>
+</ul>
+<h2 id="File-utilities"><a href="#File-utilities" class="headerlink" title="File utilities"></a>File utilities</h2><ul>
+<li>FILE_UTIL_PKG</li>
+<li>HTTP utilities</li>
+<li>HTTP_UTIL_PKG</li>
+</ul>
+<h2 id="Encryption-and-security-utilities-and-protocols"><a href="#Encryption-and-security-utilities-and-protocols" class="headerlink" title="Encryption and security utilities and protocols"></a>Encryption and security utilities and protocols</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/08/ntlm-for-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/08/ntlm-for-plsql.html</a></li>
+<li>CRYPTO_UTIL_PKG</li>
+<li>NTLM_UTIL_PKG</li>
+<li>NTLM_HTTP_PKG</li>
+</ul>
+<h2 id="Logging-and-debugging-utilities"><a href="#Logging-and-debugging-utilities" class="headerlink" title="Logging and debugging utilities"></a>Logging and debugging utilities</h2><ul>
+<li><a href="https://github.com/tmuth/Logger---A-PL-SQL-Logging-Utility" target="_blank" rel="noopener">https://github.com/tmuth/Logger---A-PL-SQL-Logging-Utility</a></li>
+<li><a href="http://sourceforge.net/projects/log4plsql/" target="_blank" rel="noopener">http://sourceforge.net/projects/log4plsql/</a></li>
+<li><a href="http://sourceforge.net/projects/ilo/" target="_blank" rel="noopener">http://sourceforge.net/projects/ilo/</a></li>
+<li>DEBUG_PKG</li>
+</ul>
+<h2 id="Generating-test-data-and-random-bits-using-PL-SQL"><a href="#Generating-test-data-and-random-bits-using-PL-SQL" class="headerlink" title="Generating test data and random bits using PL/SQL"></a>Generating test data and random bits using PL/SQL</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2011/02/generating-test-data-using-plsql.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2011/02/generating-test-data-using-plsql.html</a></li>
+<li>RANDOM_UTIL_PKG</li>
+</ul>
+<h2 id="PL-SQL-Web-Toolkit-OWA-utilities"><a href="#PL-SQL-Web-Toolkit-OWA-utilities" class="headerlink" title="PL/SQL Web Toolkit (OWA) utilities"></a>PL/SQL Web Toolkit (OWA) utilities</h2><ul>
+<li>OWA_UTIL_PKG</li>
+</ul>
+<h2 id="Web-Gateways-for-PL-SQL"><a href="#Web-Gateways-for-PL-SQL" class="headerlink" title="Web Gateways for PL/SQL"></a>Web Gateways for PL/SQL</h2><ul>
+<li><a href="http://download.oracle.com/docs/cd/B19306_01/appdev.102/b14258/d_epg.htm" target="_blank" rel="noopener">http://download.oracle.com/docs/cd/B19306_01/appdev.102/b14258/d_epg.htm</a></li>
+<li><a href="http://download.oracle.com/docs/cd/B14099_19/web.1012/b14010/toc.htm" target="_blank" rel="noopener">http://download.oracle.com/docs/cd/B14099_19/web.1012/b14010/toc.htm</a></li>
+<li><a href="http://www.oracle.com/technetwork/developer-tools/apex-listener/overview/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/developer-tools/apex-listener/overview/index.html</a></li>
+<li><a href="http://code.google.com/p/thoth-gateway/" target="_blank" rel="noopener">http://code.google.com/p/thoth-gateway/</a></li>
+<li><a href="http://sourceforge.net/projects/dbprism/" target="_blank" rel="noopener">http://sourceforge.net/projects/dbprism/</a></li>
+<li><a href="http://oss.oracle.com/projects/mod_owa/dist/documentation/modowa.htm" target="_blank" rel="noopener">http://oss.oracle.com/projects/mod_owa/dist/documentation/modowa.htm</a></li>
+</ul>
+<h2 id="jQGrid-Integration-Kit-for-PL-SQL-and-Apex"><a href="#jQGrid-Integration-Kit-for-PL-SQL-and-Apex" class="headerlink" title="jQGrid Integration Kit for PL/SQL and Apex"></a>jQGrid Integration Kit for PL/SQL and Apex</h2><ul>
+<li><a href="http://ora-00001.blogspot.com/2010/03/jqgrid-integration-kit-for-plsql-and.html" target="_blank" rel="noopener">http://ora-00001.blogspot.com/2010/03/jqgrid-integration-kit-for-plsql-and.html</a></li>
+<li><a href="http://code.google.com/p/jqgrid-for-plsql/" target="_blank" rel="noopener">http://code.google.com/p/jqgrid-for-plsql/</a></li>
+</ul>
+<h2 id="Application-Express-APIs"><a href="#Application-Express-APIs" class="headerlink" title="Application Express APIs"></a>Application Express APIs</h2><ul>
+<li><a href="http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/toc.htm" target="_blank" rel="noopener">http://download.oracle.com/docs/cd/E17556_01/doc/apirefs.40/e15519/toc.htm</a></li>
+<li>APEX_UTIL_PKG</li>
+</ul>
+<h2 id="Miscellaneous-utilities-and-demos"><a href="#Miscellaneous-utilities-and-demos" class="headerlink" title="Miscellaneous utilities and demos"></a>Miscellaneous utilities and demos</h2><ul>
+<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/plsql/sfdemo.zip" target="_blank" rel="noopener">http://www.oracle.com/webfolder/technetwork/tutorials/plsql/sfdemo.zip</a></li>
+<li><a href="http://www.toadworld.com/platforms/oracle/w/wiki/8243.plsql-obsession" target="_blank" rel="noopener">http://www.toadworld.com/platforms/oracle/w/wiki/8243.plsql-obsession</a></li>
+</ul>
+<h2 id="PL-SQL-Frameworks"><a href="#PL-SQL-Frameworks" class="headerlink" title="PL/SQL Frameworks"></a>PL/SQL Frameworks</h2><ul>
+<li><a href="http://sourceforge.net/projects/plsqlframestart/" target="_blank" rel="noopener">http://sourceforge.net/projects/plsqlframestart/</a></li>
+<li><a href="http://www.toadworld.com/Freeware/PLVisionFreeware/tabid/687/Default.aspx" target="_blank" rel="noopener">http://www.toadworld.com/Freeware/PLVisionFreeware/tabid/687/Default.aspx</a></li>
+</ul>
+<h2 id="PL-SQL-Wrappers-for-Java"><a href="#PL-SQL-Wrappers-for-Java" class="headerlink" title="PL/SQL Wrappers for Java"></a>PL/SQL Wrappers for Java</h2><ul>
+<li><a href="http://sourceforge.net/projects/oracle-jutils/" target="_blank" rel="noopener">http://sourceforge.net/projects/oracle-jutils/</a></li>
+</ul>
+<h2 id="Unit-Testing-Frameworks-for-PL-SQL"><a href="#Unit-Testing-Frameworks-for-PL-SQL" class="headerlink" title="Unit Testing Frameworks for PL/SQL"></a>Unit Testing Frameworks for PL/SQL</h2><ul>
+<li><a href="https://utplsql.github.io/" target="_blank" rel="noopener">https://utplsql.github.io/</a></li>
+<li><a href="http://code.google.com/p/pluto-test-framework/" target="_blank" rel="noopener">http://code.google.com/p/pluto-test-framework/</a></li>
+</ul>
+<h2 id="Documentation-Generators-JavaDoc-style"><a href="#Documentation-Generators-JavaDoc-style" class="headerlink" title="Documentation Generators (JavaDoc-style)"></a>Documentation Generators (JavaDoc-style)</h2><ul>
+<li><a href="http://sourceforge.net/projects/plsqlutils/" target="_blank" rel="noopener">http://sourceforge.net/projects/plsqlutils/</a></li>
+<li><a href="http://www.thatjeffsmith.com/archive/2012/03/javadoc-for-the-database-a-la-dbdoc-via-sql-developer/" target="_blank" rel="noopener">http://www.thatjeffsmith.com/archive/2012/03/javadoc-for-the-database-a-la-dbdoc-via-sql-developer/</a></li>
+</ul>
+<h2 id="Scripting-deployment-and-installation-utilities"><a href="#Scripting-deployment-and-installation-utilities" class="headerlink" title="Scripting, deployment and installation utilities"></a>Scripting, deployment and installation utilities</h2><ul>
+<li><a href="http://code.google.com/p/oracle-ddl2svn/" target="_blank" rel="noopener">http://code.google.com/p/oracle-ddl2svn/</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+            <a href="/tags/PL-SQL/" rel="tag"># PL/SQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/27/20190627-PLSQL-timer/" rel="next" title="PL/SQL统计运行的时间器">
+                <i class="fa fa-chevron-left"></i> PL/SQL统计运行的时间器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/27/20190627-lov-query-sql/" rel="prev" title="通过会话SID取得LOV查询脚本">
+                通过会话SID取得LOV查询脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="全威儒 / Weiru Quan">
+            
+              <p class="site-author-name" itemprop="name">全威儒 / Weiru Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QUANWEIRU" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:quanweiru@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3009164983" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="tencent://message/?uin=609990936&Site=&Menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#alexandria-plsql-utils"><span class="nav-number">1.</span> <span class="nav-text">alexandria-plsql-utils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-PDF-files-using-PL-SQL"><span class="nav-number">2.</span> <span class="nav-text">Generate PDF files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-Excel-files-using-PL-SQL"><span class="nav-number">3.</span> <span class="nav-text">Generate Excel files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-RTF-files-using-PL-SQL"><span class="nav-number">4.</span> <span class="nav-text">Generate RTF files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-Office-2007-OOXML-files-using-PL-SQL"><span class="nav-number">5.</span> <span class="nav-text">Working with Office 2007 (OOXML) files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zip-and-unzip-files-using-PL-SQL"><span class="nav-number">6.</span> <span class="nav-text">Zip and unzip files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-and-parse-CSV-files-using-PL-SQL"><span class="nav-number">7.</span> <span class="nav-text">Generate and parse CSV files using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-and-parse-RSS-feeds-using-PL-SQL"><span class="nav-number">8.</span> <span class="nav-text">Generate and parse RSS feeds using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transfer-files-FTP-using-PL-SQL"><span class="nav-number">9.</span> <span class="nav-text">Transfer files (FTP) using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Send-email-SMTP-using-PL-SQL"><span class="nav-number">10.</span> <span class="nav-text">Send email (SMTP) using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Receive-email-POP3-using-PL-SQL"><span class="nav-number">11.</span> <span class="nav-text">Receive email (POP3) using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Work-with-MS-Exchange-using-PL-SQL"><span class="nav-number">12.</span> <span class="nav-text">Work with MS Exchange using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrate-with-Google-services-Google-Maps-Google-Calendar-Google-Translate-using-PL-SQL"><span class="nav-number">13.</span> <span class="nav-text">Integrate with Google services (Google Maps, Google Calendar, Google Translate) using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrate-with-Amazon-web-services-Simple-Storage-Service-S3-using-PL-SQL"><span class="nav-number">14.</span> <span class="nav-text">Integrate with Amazon web services (Simple Storage Service S3) using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrate-with-PayPal-web-services"><span class="nav-number">15.</span> <span class="nav-text">Integrate with PayPal web services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrate-with-Twitter-using-PL-SQL"><span class="nav-number">16.</span> <span class="nav-text">Integrate with Twitter using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Call-SOAP-and-REST-web-services-using-PL-SQL"><span class="nav-number">17.</span> <span class="nav-text">Call SOAP and REST web services using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Publish-SOAP-web-service-using-PL-SQL"><span class="nav-number">18.</span> <span class="nav-text">Publish SOAP web service using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Publish-REST-web-services-using-PL-SQL"><span class="nav-number">19.</span> <span class="nav-text">Publish REST web services using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-expressions-using-PL-SQL"><span class="nav-number">20.</span> <span class="nav-text">Regular expressions using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-date-and-math-utilities"><span class="nav-number">21.</span> <span class="nav-text">String, date and math utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding-and-data-type-utilities"><span class="nav-number">22.</span> <span class="nav-text">Encoding and data type utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-utilities"><span class="nav-number">23.</span> <span class="nav-text">SQL utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-utilities"><span class="nav-number">24.</span> <span class="nav-text">XML utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-utilities"><span class="nav-number">25.</span> <span class="nav-text">File utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encryption-and-security-utilities-and-protocols"><span class="nav-number">26.</span> <span class="nav-text">Encryption and security utilities and protocols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logging-and-debugging-utilities"><span class="nav-number">27.</span> <span class="nav-text">Logging and debugging utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generating-test-data-and-random-bits-using-PL-SQL"><span class="nav-number">28.</span> <span class="nav-text">Generating test data and random bits using PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL-Web-Toolkit-OWA-utilities"><span class="nav-number">29.</span> <span class="nav-text">PL/SQL Web Toolkit (OWA) utilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Gateways-for-PL-SQL"><span class="nav-number">30.</span> <span class="nav-text">Web Gateways for PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQGrid-Integration-Kit-for-PL-SQL-and-Apex"><span class="nav-number">31.</span> <span class="nav-text">jQGrid Integration Kit for PL/SQL and Apex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Express-APIs"><span class="nav-number">32.</span> <span class="nav-text">Application Express APIs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Miscellaneous-utilities-and-demos"><span class="nav-number">33.</span> <span class="nav-text">Miscellaneous utilities and demos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL-Frameworks"><span class="nav-number">34.</span> <span class="nav-text">PL/SQL Frameworks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL-Wrappers-for-Java"><span class="nav-number">35.</span> <span class="nav-text">PL/SQL Wrappers for Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unit-Testing-Frameworks-for-PL-SQL"><span class="nav-number">36.</span> <span class="nav-text">Unit Testing Frameworks for PL/SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Documentation-Generators-JavaDoc-style"><span class="nav-number">37.</span> <span class="nav-text">Documentation Generators (JavaDoc-style)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scripting-deployment-and-installation-utilities"><span class="nav-number">38.</span> <span class="nav-text">Scripting, deployment and installation utilities</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">全威儒 / Weiru Quan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
