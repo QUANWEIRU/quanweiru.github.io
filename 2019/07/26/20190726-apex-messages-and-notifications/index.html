@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Oracle,Oracle APEX,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="儒此奇哉" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="AGENDA Success Message Prepared/Formatted message Validation/Error message Client side message Common problems with message  PL/SQL Success Message Add success message to page processes 1Toggle messag">
+<meta name="keywords" content="Oracle,Oracle APEX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mastering APEX Messages and Notifications">
+<meta property="og:url" content="https://quanweiru.github.io/2019/07/26/20190726-apex-messages-and-notifications/index.html">
+<meta property="og:site_name" content="儒此奇哉">
+<meta property="og:description" content="AGENDA Success Message Prepared/Formatted message Validation/Error message Client side message Common problems with message  PL/SQL Success Message Add success message to page processes 1Toggle messag">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B1A29D2C5-7FAD-5706-76B7-53D1AE6BA7F5%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B61334F57-1362-C3C3-EA20-5E3DB5DCD8D9%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BDDBD8C67-BBDD-956C-0AD9-89A417A25D85%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B9C5BF49A-ABA3-5B2C-71E4-2F5172D090D4%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BB946ABD2-6815-5908-CA44-131CBAB8F01D%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B94514E28-7A9C-059E-59C8-A7CDA9AC3A91%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B12C43EAA-6AE1-B601-6972-8A3DF90F874D%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BF38E4EA7-A04A-A5BA-348D-7D0AC881093A%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B887B4A11-FAB1-5036-6DFB-49EE4726DB22%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B4BB65958-BB3D-C571-6072-401B889B3D84%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B488B448C-BBAA-1D88-2A59-9129CB54873D%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B4CCB674B-C368-68A2-264A-7DD43A4B84D0%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B3915E29C-C1B0-CA0D-0121-5F7B5574B456%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BA12B1A6F-C997-ADDF-184B-42E16D420F52%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B1474FA97-06CE-750E-7390-6369FEE48DF7%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B8B1D5261-871C-4565-14BD-0CD9AD49BFB5%7D.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B93BA5141-BD47-65ED-9D8C-984F6F16279E%7D.jpg">
+<meta property="og:updated_time" content="2019-07-26T10:46:41.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mastering APEX Messages and Notifications">
+<meta name="twitter:description" content="AGENDA Success Message Prepared/Formatted message Validation/Error message Client side message Common problems with message  PL/SQL Success Message Add success message to page processes 1Toggle messag">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B1A29D2C5-7FAD-5706-76B7-53D1AE6BA7F5%7D.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://quanweiru.github.io/2019/07/26/20190726-apex-messages-and-notifications/">
+
+
+
+
+
+  <title>Mastering APEX Messages and Notifications | 儒此奇哉</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">儒此奇哉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/07/26/20190726-apex-messages-and-notifications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="全威儒 / Weiru Quan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="儒此奇哉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mastering APEX Messages and Notifications</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T11:07:10+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle APEX</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="AGENDA"><a href="#AGENDA" class="headerlink" title="AGENDA"></a>AGENDA</h1><ul>
+<li>Success Message</li>
+<li>Prepared/Formatted message</li>
+<li>Validation/Error message</li>
+<li>Client side message</li>
+<li>Common problems with message</li>
+</ul>
+<h2 id="PL-SQL-Success-Message"><a href="#PL-SQL-Success-Message" class="headerlink" title="PL/SQL Success Message"></a>PL/SQL Success Message</h2><ul>
+<li><p>Add success message to page processes</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Toggle message display <span class="keyword">in</span> branch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use subsititutions for dynamic messages</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;P6_ENAME. Updated!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create a dynamic message in pl/sql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex_application.g_print_success_message := <span class="string">'Salary doubled equals '</span> || (:P6_SAL * 2) || <span class="string">'!'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="What-is-a-Prepared-Message"><a href="#What-is-a-Prepared-Message" class="headerlink" title="What is a Prepared Message?"></a>What is a Prepared Message?</h2><ul>
+<li><p>Predefined message with dynamic placeholders</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Easy to <span class="built_in">read</span> at a glance</span><br><span class="line">Possible to create messages <span class="keyword">for</span> multiple languages</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Where can these be created?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Shared Components &gt;&gt; Text Messages</span><br><span class="line">Defined <span class="keyword">in</span> your own table or code</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Messages using apex_string.format <em>(Supports both inplicit and explicit references)</em></p>
+<blockquote>
+<p><strong>Implicit reference to parameters</strong><br>(‘Hello %s, how is the weather in %s?’, ‘Tyson’, ‘Huntsville’)<br>=&gt; Hello Tyson, how is the weather in Huntsville? </p>
+<p><strong>Explicit reference to parameters</strong><br><strong><em>Remember parameters references start with 0!</em></strong><br>(‘Hello %1, how is the weather in %0?’, ‘Huntsville’, ‘Tyson’)<br>=&gt; Hello Tyson, how is the weather in Huntsville? </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">declare</span></span><br><span class="line">    c_button_template   constant varchar2(32767) := <span class="string">'&lt;button type="button" title="%0 %1" class="t-Button %1"&gt;%0&lt;/button&gt;'</span>;</span><br><span class="line">    l_button_classes apex_t_varchar2 := apex_string.split(<span class="string">'u-hot,u-warning,u-success'</span>, <span class="string">','</span>);</span><br><span class="line">begin</span><br><span class="line">    sys.htp.p(apex_string.format(c_button_template, <span class="string">'Template Button'</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. l_button_classes.count</span><br><span class="line">    loop</span><br><span class="line">        sys.htp.p(apex_string.format(c_button_template, <span class="string">'Template Button'</span>, l_button_classes(i)));</span><br><span class="line">    end loop;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Messages using apex_lang.message <em>(Only supports explicit parameter references)</em><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B1A29D2C5-7FAD-5706-76B7-53D1AE6BA7F5%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B61334F57-1362-C3C3-EA20-5E3DB5DCD8D9%7D.jpg" alt></p>
+</li>
+<li><p>apex_debug</p>
+</li>
+</ul>
+<h2 id="Validation-and-Error-Message"><a href="#Validation-and-Error-Message" class="headerlink" title="Validation and Error Message"></a>Validation and Error Message</h2><ul>
+<li>apex_error    package is increditbly helpful</li>
+<li>1 error = 1 validation message</li>
+<li>Define procedures to run many validations</li>
+<li>Do not rely no the error handling function (we can create a better user experience)</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BDDBD8C67-BBDD-956C-0AD9-89A417A25D85%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B9C5BF49A-ABA3-5B2C-71E4-2F5172D090D4%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BB946ABD2-6815-5908-CA44-131CBAB8F01D%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B94514E28-7A9C-059E-59C8-A7CDA9AC3A91%7D.jpg" alt></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">is_valid_emp(</span><br><span class="line">    p_empno =&gt; :P51_EMPNO,</span><br><span class="line">    p_ename =&gt; :P51_ENAME,</span><br><span class="line">    p_sal   =&gt; :P51_SAL,</span><br><span class="line">    p_job   =&gt; :P51_JOB,</span><br><span class="line">    p_comm  =&gt; :P51_COMM,</span><br><span class="line">    p_items =&gt; apex_util.string_to_table(<span class="string">'P51_ENAME:P51_SAL:P51_JOB:P51_COMM'</span>)</span><br><span class="line">);</span><br><span class="line"><span class="built_in">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">create or replace procedure is_valid_emp(</span><br><span class="line">    p_empno emp.empno%<span class="built_in">type</span>,</span><br><span class="line">    p_ename emp.ename%<span class="built_in">type</span>,</span><br><span class="line">    p_sal   emp.sal%<span class="built_in">type</span>,</span><br><span class="line">    p_job   emp.job%<span class="built_in">type</span>,</span><br><span class="line">    p_comm  emp.comm%<span class="built_in">type</span>,</span><br><span class="line">    p_items apex_application_global.vc_arr2</span><br><span class="line">)</span><br><span class="line">is</span><br><span class="line">    c_ename_pos constant pls_integer := 1;</span><br><span class="line">    c_sal_pos   constant pls_integer := 2;</span><br><span class="line">    c_job_pos   constant pls_integer := 3;</span><br><span class="line">    c_comm_pos  constant pls_integer := 4;</span><br><span class="line"></span><br><span class="line">    l_page_id   pls_integer := nv(<span class="string">'APP_PAGE_ID'</span>);</span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> error <span class="keyword">in</span> (select count(*) from emp <span class="built_in">where</span> ename = p_ename and empno != p_empno)</span><br><span class="line">    loop</span><br><span class="line">        apex_error.add_error(</span><br><span class="line">            p_message           =&gt; <span class="string">'Ename already exists!'</span>,</span><br><span class="line">            p_display_location  =&gt; apex_error.c_inline_with_field_and_notif,</span><br><span class="line">            p_page_item_name    =&gt; p_items(c_ename_pos)</span><br><span class="line">        );</span><br><span class="line">    end loop;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> p_sal &gt; 5000 <span class="keyword">then</span></span><br><span class="line">        apex_error.add_error(</span><br><span class="line">            p_message           =&gt; <span class="string">'Salary must be less than or equal to 5000'</span>,</span><br><span class="line">            p_display_location  =&gt; apex_error.c_inline_with_field_and_notif,</span><br><span class="line">            p_page_item_name    =&gt; p_items(c_sal_pos)</span><br><span class="line">        );</span><br><span class="line">    end <span class="keyword">if</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> p_comm &gt; 500 <span class="keyword">then</span></span><br><span class="line">        apex_error.add_error(</span><br><span class="line">            p_message           =&gt; <span class="string">'Comm must be less than or equal to 500'</span>,</span><br><span class="line">            p_display_location  =&gt; apex_error.c_inline_with_field_and_notif,</span><br><span class="line">            p_page_item_name    =&gt; p_items(c_sal_pos)</span><br><span class="line">        );</span><br><span class="line">    end <span class="keyword">if</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> p_job != <span class="string">'SALESMAN'</span> and nvl(p_comm, 0) &gt; 0 <span class="keyword">then</span></span><br><span class="line">        apex_error.add_error(</span><br><span class="line">            p_message           =&gt; <span class="string">'Only Salesman can have a commission'</span>,</span><br><span class="line">            p_display_location  =&gt; apex_error.c_inline_with_field_and_notif,</span><br><span class="line">            p_page_item_name    =&gt; p_items(c_comm_pos)</span><br><span class="line">        );</span><br><span class="line">    end <span class="keyword">if</span>;</span><br><span class="line">end is_valid_emp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Error-Handling-Function"><a href="#Error-Handling-Function" class="headerlink" title="Error Handling Function"></a>Error Handling Function</h2><ul>
+<li>Wonderful general purpose error handler</li>
+<li>Only runs when something went wrong</li>
+<li>Can create frustrating user experience</li>
+<li>Still an incredibly helpful fallback</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">create or replace <span class="keyword">function</span> apex_error_handling_example (</span><br><span class="line">    p_error <span class="keyword">in</span> apex_error.t_error )</span><br><span class="line">    <span class="built_in">return</span> apex_error.t_error_result</span><br><span class="line">is</span><br><span class="line">    l_result          apex_error.t_error_result;</span><br><span class="line">    l_reference_id    number;</span><br><span class="line">    l_constraint_name varchar2(255);</span><br><span class="line">begin</span><br><span class="line">    l_result := apex_error.init_error_result (</span><br><span class="line">                    p_error =&gt; p_error );</span><br><span class="line"> </span><br><span class="line">    -- If it<span class="string">'s an internal error raised by APEX, like an invalid statement or</span></span><br><span class="line"><span class="string">    -- code which cannot be executed, the error text might contain security sensitive</span></span><br><span class="line"><span class="string">    -- information. To avoid this security problem rewrite the error to</span></span><br><span class="line"><span class="string">    -- a generic error message and log the original error message for further</span></span><br><span class="line"><span class="string">    -- investigation by the help desk.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   if p_error.is_internal_error then</span></span><br><span class="line"><span class="string">        -- mask all errors that are not common runtime errors (Access Denied</span></span><br><span class="line"><span class="string">        -- errors raised by application / page authorization and all errors</span></span><br><span class="line"><span class="string">        -- regarding session and session state)</span></span><br><span class="line"><span class="string">        if not p_error.is_common_runtime_error then</span></span><br><span class="line"><span class="string">            -- log error for example with an autonomous transaction and return</span></span><br><span class="line"><span class="string">            -- l_reference_id as reference#</span></span><br><span class="line"><span class="string">            -- l_reference_id := log_error (</span></span><br><span class="line"><span class="string">            --                       p_error =&gt; p_error );</span></span><br><span class="line"><span class="string">            --</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">            -- Change the message to the generic error message which doesn'</span>t expose</span><br><span class="line">            -- any sensitive information.</span><br><span class="line">            l_result.message      := <span class="string">'An unexpected internal application error has occurred. '</span>||</span><br><span class="line">                                        <span class="string">'Please get in contact with XXX and provide '</span>||</span><br><span class="line">                                        <span class="string">'reference# '</span>||to_char(l_reference_id, <span class="string">'999G999G999G990'</span>)||</span><br><span class="line">                                        <span class="string">' for further investigation.'</span>;</span><br><span class="line">            l_result.additional_info := null;</span><br><span class="line">        end <span class="keyword">if</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        -- Always show the error as inline error</span><br><span class="line">        -- Note: If you have created manual tabular forms (using the package</span><br><span class="line">        --       apex_item/htmldb_item <span class="keyword">in</span> the SQL statement) you should still</span><br><span class="line">        --       use <span class="string">"On error page"</span> on that pages to avoid loosing entered data</span><br><span class="line">        l_result.display_location := <span class="keyword">case</span></span><br><span class="line">                                       when l_result.display_location = apex_error.c_on_error_page <span class="keyword">then</span> apex_error.c_inline_in_notification</span><br><span class="line">                                       <span class="keyword">else</span> l_result.display_location</span><br><span class="line">                                     end;</span><br><span class="line"> </span><br><span class="line">        -- If it<span class="string">'s a constraint violation like</span></span><br><span class="line"><span class="string">        --</span></span><br><span class="line"><span class="string">        --   -) ORA-00001: unique constraint violated</span></span><br><span class="line"><span class="string">        --   -) ORA-02091: transaction rolled back (-&gt; can hide a deferred constraint)</span></span><br><span class="line"><span class="string">        --   -) ORA-02290: check constraint violated</span></span><br><span class="line"><span class="string">        --   -) ORA-02291: integrity constraint violated - parent key not found</span></span><br><span class="line"><span class="string">        --   -) ORA-02292: integrity constraint violated - child record found</span></span><br><span class="line"><span class="string">        --</span></span><br><span class="line"><span class="string">        -- try to get a friendly error message from our constraint lookup configuration.</span></span><br><span class="line"><span class="string">        -- If the constraint in our lookup table is not found, fallback to</span></span><br><span class="line"><span class="string">        -- the original ORA error message.</span></span><br><span class="line"><span class="string">        if p_error.ora_sqlcode in (-1, -2091, -2290, -2291, -2292) then</span></span><br><span class="line"><span class="string">            l_constraint_name := apex_error.extract_constraint_name (</span></span><br><span class="line"><span class="string">                                     p_error =&gt; p_error );</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">            begin</span></span><br><span class="line"><span class="string">                select message</span></span><br><span class="line"><span class="string">                  into l_result.message</span></span><br><span class="line"><span class="string">                  from constraint_lookup</span></span><br><span class="line"><span class="string">                 where constraint_name = l_constraint_name;</span></span><br><span class="line"><span class="string">            exception when no_data_found then null; -- not every constraint has to be in our lookup table</span></span><br><span class="line"><span class="string">            end;</span></span><br><span class="line"><span class="string">        end if;</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        -- If an ORA error has been raised, for example a raise_application_error(-20xxx, '</span>...<span class="string">')</span></span><br><span class="line"><span class="string">        -- in a table trigger or in a PL/SQL package called by a process and the </span></span><br><span class="line"><span class="string">        -- error has not been found in the lookup table, then display</span></span><br><span class="line"><span class="string">        -- the actual error text and not the full error stack with all the ORA error numbers.</span></span><br><span class="line"><span class="string">        if p_error.ora_sqlcode is not null and l_result.message = p_error.message then</span></span><br><span class="line"><span class="string">            l_result.message := apex_error.get_first_ora_error_text (</span></span><br><span class="line"><span class="string">                                    p_error =&gt; p_error );</span></span><br><span class="line"><span class="string">        end if;</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">        -- If no associated page item/tabular form column has been set, use</span></span><br><span class="line"><span class="string">        -- apex_error.auto_set_associated_item to automatically guess the affected</span></span><br><span class="line"><span class="string">        -- error field by examine the ORA error for constraint names or column names.</span></span><br><span class="line"><span class="string">        if l_result.page_item_name is null and l_result.column_alias is null then</span></span><br><span class="line"><span class="string">            apex_error.auto_set_associated_item (</span></span><br><span class="line"><span class="string">                p_error        =&gt; p_error,</span></span><br><span class="line"><span class="string">                p_error_result =&gt; l_result );</span></span><br><span class="line"><span class="string">        end if;</span></span><br><span class="line"><span class="string">    end if;</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">    return l_result;</span></span><br><span class="line"><span class="string">end apex_error_handling_example;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Client-side-message-in-Javascript"><a href="#Client-side-message-in-Javascript" class="headerlink" title="Client side message in Javascript"></a>Client side message in Javascript</h2><ul>
+<li><h3 id="apex-message-namespace-is-awesome"><a href="#apex-message-namespace-is-awesome" class="headerlink" title="apex.message namespace is awesome!"></a>apex.message namespace is awesome!</h3></li>
+<li><p>success messages</p>
+</li>
+<li><p>error messages</p>
+</li>
+<li><p>alerts</p>
+</li>
+<li><h3 id="Use-setThemeHooks-to-extend-functionality"><a href="#Use-setThemeHooks-to-extend-functionality" class="headerlink" title="Use setThemeHooks to extend functionality"></a>Use <em>setThemeHooks</em> to extend functionality</h3></li>
+<li><p>beforeShow lifecycle event</p>
+</li>
+<li><p>afterShow lifecycle event</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B12C43EAA-6AE1-B601-6972-8A3DF90F874D%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BF38E4EA7-A04A-A5BA-348D-7D0AC881093A%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B887B4A11-FAB1-5036-6DFB-49EE4726DB22%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B4BB65958-BB3D-C571-6072-401B889B3D84%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B488B448C-BBAA-1D88-2A59-9129CB54873D%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B4CCB674B-C368-68A2-264A-7DD43A4B84D0%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B3915E29C-C1B0-CA0D-0121-5F7B5574B456%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7BA12B1A6F-C997-ADDF-184B-42E16D420F52%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B1474FA97-06CE-750E-7390-6369FEE48DF7%7D.jpg" alt><br><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B8B1D5261-871C-4565-14BD-0CD9AD49BFB5%7D.jpg" alt></p>
+<h2 id="Using-Message-Theme-Hooks"><a href="#Using-Message-Theme-Hooks" class="headerlink" title="Using Message Theme Hooks"></a>Using Message Theme Hooks</h2><p><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/%7B93BA5141-BD47-65ED-9D8C-984F6F16279E%7D.jpg" alt></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(message)&#123;</span><br><span class="line">    <span class="built_in">let</span> duration = 5000;</span><br><span class="line">    <span class="built_in">let</span> messageTimeout = setTimeout(messsage.hidePageSuccess, duration);</span><br><span class="line">    message.setThemeHooks(&#123;</span><br><span class="line">        beforShow: <span class="keyword">function</span>(pMsgType, pElement$)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pMsgType === apex.message.TYPE.SUCCESS)&#123;</span><br><span class="line">                clearTimeout(messageTimeout);</span><br><span class="line">                messageTimeout = setTimeout(messsage.hidePageSuccess, duration);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(apex.message);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Common-Problems"><a href="#Common-Problems" class="headerlink" title="Common Problems"></a>Common Problems</h2><ul>
+<li>Used in compiled/custom code</li>
+<li>Limited options for presenting values</li>
+<li>Fomratting parameters would be great</li>
+<li>Named parameters would be awesom</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+            <a href="/tags/Oracle-APEX/" rel="tag"># Oracle APEX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/20190709-arrangement-combination/" rel="next" title="排列组合的思考方式">
+                <i class="fa fa-chevron-left"></i> 排列组合的思考方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="全威儒 / Weiru Quan">
+            
+              <p class="site-author-name" itemprop="name">全威儒 / Weiru Quan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QUANWEIRU" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:quanweiru@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3009164983" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="tencent://message/?uin=609990936&Site=&Menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AGENDA"><span class="nav-number">1.</span> <span class="nav-text">AGENDA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PL-SQL-Success-Message"><span class="nav-number">1.1.</span> <span class="nav-text">PL/SQL Success Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-Prepared-Message"><span class="nav-number">1.2.</span> <span class="nav-text">What is a Prepared Message?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validation-and-Error-Message"><span class="nav-number">1.3.</span> <span class="nav-text">Validation and Error Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-Handling-Function"><span class="nav-number">1.4.</span> <span class="nav-text">Error Handling Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client-side-message-in-Javascript"><span class="nav-number">1.5.</span> <span class="nav-text">Client side message in Javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apex-message-namespace-is-awesome"><span class="nav-number">1.5.1.</span> <span class="nav-text">apex.message namespace is awesome!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-setThemeHooks-to-extend-functionality"><span class="nav-number">1.5.2.</span> <span class="nav-text">Use setThemeHooks to extend functionality</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Message-Theme-Hooks"><span class="nav-number">1.6.</span> <span class="nav-text">Using Message Theme Hooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-Problems"><span class="nav-number">1.7.</span> <span class="nav-text">Common Problems</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">全威儒 / Weiru Quan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

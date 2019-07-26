@@ -313,6 +313,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/06/26/20190626-Accounting-Calendar-template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="全威儒 / Weiru Quan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="儒此奇哉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/26/20190626-Accounting-Calendar-template/" itemprop="url">R12.x Accounting Calendar template</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T19:57:29+08:00">
+                2019-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/E-Business-Suite/" itemprop="url" rel="index">
+                    <span itemprop="name">E-Business Suite</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://raw.githubusercontent.com/QUANWEIRU/blog-images/master/20190626200402.png" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--parameters:</span></span><br><span class="line"><span class="comment">--year : start year</span></span><br><span class="line"><span class="comment">--month: generate months</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="comment">--(case when mod(LEVEL,12) &lt;&gt;0 then mod(LEVEL,12) else  12 end)</span></span><br><span class="line"><span class="comment">--, (case when mod(LEVEL,12) &lt;&gt; 0 then floor(level/12) else floor(level/12)-1 end)</span></span><br><span class="line"> initcap (to_char (<span class="keyword">to_date</span> (<span class="keyword">lpad</span> ((<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>), <span class="number">2</span>, <span class="string">'0'</span>), <span class="string">'mm'</span>), <span class="string">'MON'</span>, <span class="string">'NLS_DATE_LANGUAGE=AMERICAN'</span>)) prefix</span><br><span class="line">, <span class="string">'Month'</span> <span class="keyword">type</span></span><br><span class="line">, to_char(to_number(:<span class="keyword">year</span>) +  (<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt; <span class="number">0</span> <span class="keyword">then</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>) <span class="keyword">else</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>)<span class="number">-1</span> <span class="keyword">end</span>))  <span class="keyword">year</span></span><br><span class="line">, to_char (<span class="keyword">to_date</span> (<span class="keyword">lpad</span> (to_char(<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>), <span class="number">2</span>, <span class="string">'0'</span>), <span class="string">'mm'</span>), <span class="string">'q'</span>) <span class="keyword">quarter</span></span><br><span class="line">, (<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>) <span class="keyword">num</span></span><br><span class="line">, <span class="keyword">upper</span> (to_char (<span class="keyword">to_date</span> (to_char(to_number(:<span class="keyword">year</span>) +  (<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt; <span class="number">0</span> <span class="keyword">then</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>) <span class="keyword">else</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>)<span class="number">-1</span> <span class="keyword">end</span>)) || <span class="string">'-'</span> || <span class="keyword">lpad</span> ((<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>), <span class="number">2</span>, <span class="string">'0'</span>), <span class="string">'yyyy-mm'</span>), <span class="string">'dd-mon-yyyy'</span>)) date_from</span><br><span class="line">, <span class="keyword">upper</span> (to_char (<span class="keyword">last_day</span> (<span class="keyword">to_date</span> (to_char(to_number(:<span class="keyword">year</span>) +  (<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt; <span class="number">0</span> <span class="keyword">then</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>) <span class="keyword">else</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>)<span class="number">-1</span> <span class="keyword">end</span>)) || <span class="string">'-'</span> || <span class="keyword">lpad</span> ((<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>), <span class="number">2</span>, <span class="string">'0'</span>), <span class="string">'yyyy-mm'</span>)), <span class="string">'dd-mon-yyyy'</span>)) date_to</span><br><span class="line">, initcap (to_char (<span class="keyword">to_date</span> (to_char(to_number(:<span class="keyword">year</span>) +  (<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt; <span class="number">0</span> <span class="keyword">then</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>) <span class="keyword">else</span> <span class="keyword">floor</span>(<span class="keyword">level</span>/<span class="number">12</span>)<span class="number">-1</span> <span class="keyword">end</span>)) || <span class="string">'-'</span> || <span class="keyword">lpad</span> ((<span class="keyword">case</span> <span class="keyword">when</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="keyword">mod</span>(<span class="keyword">level</span>,<span class="number">12</span>) <span class="keyword">else</span>  <span class="number">12</span> <span class="keyword">end</span>), <span class="number">2</span>, <span class="string">'0'</span>), <span class="string">'yyyy-mm'</span>), <span class="string">'mon-yy'</span>)) <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> dual</span><br><span class="line"><span class="keyword">connect</span> <span class="keyword">by</span> <span class="keyword">level</span> &lt;= :<span class="keyword">month</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">'Adj'</span> prefix</span><br><span class="line">, <span class="string">'Month'</span> <span class="keyword">type</span></span><br><span class="line">, to_char (to_number(:<span class="keyword">year</span>) + <span class="keyword">level</span> - <span class="number">1</span>) <span class="keyword">year</span></span><br><span class="line">, <span class="string">'4'</span> <span class="keyword">quarter</span></span><br><span class="line">, <span class="number">13</span> <span class="keyword">num</span></span><br><span class="line">, <span class="keyword">upper</span> (to_char (<span class="keyword">last_day</span> (<span class="keyword">to_date</span> (to_char (to_number(:<span class="keyword">year</span>) + <span class="keyword">level</span> - <span class="number">1</span>)  || <span class="string">'-12'</span>, <span class="string">'yyyy-mm'</span>)), <span class="string">'dd-mon-yyyy'</span>)) date_from</span><br><span class="line">, <span class="keyword">upper</span> (to_char (<span class="keyword">last_day</span> (<span class="keyword">to_date</span> (to_char (to_number(:<span class="keyword">year</span>) + <span class="keyword">level</span> - <span class="number">1</span>)  || <span class="string">'-12'</span>, <span class="string">'yyyy-mm'</span>)), <span class="string">'dd-mon-yyyy'</span>)) date_to</span><br><span class="line">, <span class="string">'Adj-'</span> || to_char (<span class="keyword">to_date</span> (to_char (to_number(:<span class="keyword">year</span>) + <span class="keyword">level</span> - <span class="number">1</span>) , <span class="string">'yyyy'</span>), <span class="string">'yy'</span>) <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> dual</span><br><span class="line"><span class="keyword">connect</span> <span class="keyword">by</span> <span class="keyword">level</span> &lt;= <span class="keyword">floor</span>(:<span class="keyword">month</span>/<span class="number">12</span>)</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">year</span>, <span class="keyword">num</span> <span class="keyword">asc</span>;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://quanweiru.github.io/2019/06/26/20190626-ebs-FRM-92050/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1095,7 +1248,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1106,7 +1259,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1117,7 +1270,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
